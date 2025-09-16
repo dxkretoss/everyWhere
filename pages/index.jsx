@@ -79,7 +79,7 @@ export default function Index() {
       {/* Sticky Filter Bar */}
       <div className="shadow-[0px_4px_6px_0px_rgba(0,0,0,0.11)] sticky top-[64px] z-40 bg-white px-5 py-2 flex items-center gap-6 justify-between">
         {/* Mobile view (Filter + Save Search side by side) */}
-        <div className="flex sm:hidden gap-2 w-[338px] h-[38px] ">
+        <div className="flex sm:hidden gap-2 w-full">
           <button
             onClick={() => setShowMobileFilters(true)}
             className="w-1/2 flex items-center justify-center gap-2 border border-[#29ABE2] text-[#29ABE2] px-4 py-2 rounded-[10px]"
@@ -100,7 +100,7 @@ export default function Index() {
             All Filters
           </span>
         </div>
-        <div className="w-px h-6 bg-[rgba(235,235,235,1)]"></div>
+        <div className="hidden  sm:flex w-px h-6 bg-[rgba(235,235,235,1)]"></div>
 
 
         {/* Left Arrow (desktop only) */}
@@ -256,23 +256,6 @@ export default function Index() {
               Show nearby accommodations
             </label>
           </div>
-
-          {/* <div
-            id="show-accommodations-btn"
-            class="absolute bottom-5 left-1/2 -translate-x-1/2 bg-white px-[15px] py-[10px] rounded-[10px] shadow-[0_3px_12px_rgba(0,0,0,0.15)] text-[#00a0df] text-[12px] flex items-center gap-[10px] z-[999]"
-          >
-            <input
-              type="checkbox"
-              id="accommodation-toggle"
-              class="peer appearance-none w-4 h-4 border border-[#00a0df] rounded-sm cursor-pointer 
-           checked:bg-[#00a0df] checked:border-[#00a0df]
-           checked:after:content-['✔'] checked:after:text-white checked:after:text-[10px] 
-           checked:after:flex checked:after:items-center checked:after:justify-center"
-            />
-            <label for="accommodation-toggle" class="cursor-pointer select-none">
-              Show nearby accommodations
-            </label>
-          </div> */}
         </div>
       </div>
 

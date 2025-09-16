@@ -76,7 +76,7 @@ export default function WorkersMap() {
             {/* Sticky Filter Bar */}
             <div className="shadow-[0px_4px_6px_0px_rgba(0,0,0,0.11)] sticky top-[64px] z-40 bg-white px-5 py-2 flex items-center gap-6 justify-between">
                 {/* Mobile view (Filter + Save Search side by side) */}
-                <div className="flex sm:hidden gap-2 w-[338px] h-[38px] ">
+                <div className="flex sm:hidden gap-2 w-full ">
                     <button
                         onClick={() => setShowMobileFilters(true)}
                         className="w-1/2 flex items-center justify-center gap-2 border border-[#29ABE2] text-[#29ABE2] px-4 py-2 rounded-[10px]"
@@ -97,7 +97,7 @@ export default function WorkersMap() {
                         All Filters
                     </span>
                 </div>
-                <div className="w-px h-6 bg-[rgba(235,235,235,1)]"></div>
+                <div className="hidden sm:flex w-px h-6 bg-[rgba(235,235,235,1)]"></div>
 
 
                 {/* Left Arrow (desktop only) */}

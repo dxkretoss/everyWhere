@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function JobCardtwo() {
     return (
-        <div className="bg-white h-[257px] p-2  rounded-[10px] border border-[#CECECE] shadow-[4px_4px_11px_0px_#75757530] overflow-hidden mb-5">
+        <div className=" bg-white p-2 rounded-[10px] border border-[#CECECE] shadow-[4px_4px_11px_0px_#75757530] overflow-hidden mb-5 h-auto lg:h-[257px]">
             {/* flex-col on mobile, flex-row on larger screens */}
             <div className="flex flex-col sm:flex-row">
 
@@ -11,7 +11,7 @@ export default function JobCardtwo() {
                     <img
                         src="/jobcard/jobimage.png"
                         alt="job"
-                        className="w-[215px] h-[209px] object-cover rounded-lg"
+                        className="min-w-[215px] w-full h-[209px] object-cover rounded-lg"
                     />
                     <div className="absolute top-1 right-1 flex -space-x-2">
                         <img src="/badge1.svg" alt="badge1" className="w-[32px] h-[32px]" />

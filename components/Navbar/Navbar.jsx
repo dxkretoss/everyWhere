@@ -15,7 +15,7 @@ export default function Navbar() {
                         className="object-contain mt-[2px]"
                     />
                 </div>
-                <div className="hidden md:flex flex-1">
+                <div className="hidden xl:flex flex-1">
                     <div className="w-full relative">
                         <Search className="absolute  text-[#29ABE2] left-3 top-1/2 transform -translate-y-1/2 w-5 h-5" />
                         <input
@@ -28,16 +28,16 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center gap-4 mr-2">
-                <button className="w-[160px] h-[45px] hidden md:block bg-white border border-[#EBEBEB] text-[#29ABE2] font-poppins font-semibold text-sm leading-none tracking-normal px-4 py-2 rounded-lg hover:bg-blue-50 transition">
+                <button className="w-[160px] h-[45px] hidden xl:block bg-white border border-[#EBEBEB] text-[#29ABE2] font-poppins font-semibold text-sm leading-none tracking-normal px-4 py-2 rounded-lg hover:bg-blue-50 transition">
                     PUBLISH AN OFFER
                 </button>
 
 
                 <div className="flex items-center gap-3">
-                    <img src="/nav/menu.svg" alt="Apps" className="cursor-pointer" />
-                    <img src="/nav/mail.svg" alt="Mail" className="cursor-pointer" />
+                    <img src="/nav/menu.svg" alt="Apps" className="hidden xl:flex cursor-pointer" />
+                    <img src="/nav/mail.svg" alt="Mail" className="hidden xl:flex cursor-pointer" />
                     <img src="/nav/bell.svg" alt="Notifications" className="cursor-pointer" />
-                    <div class="w-[45px] h-[45px] opacity-100 rounded-[10px] border gap-[10px] border-[#EBEBEB] px-[12px] py-[10px] flex items-center justify-center">
+                    <div class="hidden xl:flex w-[45px] h-[45px] opacity-100 rounded-[10px] border gap-[10px] border-[#EBEBEB] px-[12px] py-[10px]  items-center justify-center">
                         <img src="/nav/circle.svg" alt="Refresh" class="cursor-pointer" />
                     </div>
 
