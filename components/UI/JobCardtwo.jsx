@@ -36,9 +36,7 @@ export default function JobCardtwo() {
                                     key={i}
                                     className="w-[19px] h-[19px] flex items-center justify-center"
                                 >
-                                    <span className="text-lg font-bold w-[8px] h-[15px] text-[#FFAD2A] flex items-center justify-center">
-                                        ★
-                                    </span>
+                                    <img src='/Star.svg' />
                                 </div>
                             ))}
                         </div>
