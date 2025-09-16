@@ -20,7 +20,7 @@ export default function Navbaraccomodations() {
                         <input
                             type="text"
                             placeholder="Location, Type, Keyword ..."
-                            className="font-normal text-sm h-[45px] w-[612px] pl-10 pr-4 py-2 rounded-[12px] shadow-[0px_4px_11px_0px_#93939312] border border-[#EBEBEB]"
+                            className="font-normal text-sm h-[45px] w-[612px] pl-10 pr-4 py-2 rounded-[12px] shadow-lg border border-[#EBEBEB]"
                         />
                     </div>
                 </div>
