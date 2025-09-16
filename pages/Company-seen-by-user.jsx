@@ -256,44 +256,44 @@ export default function Profileseenbyvisitors() {
         }
     ];
 
+    const ValuesAndInterests = [
+        {
+            rowone: [
+                { name: 'Environment', img: './valueandintrest/Environment.svg' },
+                { name: 'Animal Rights', img: './valueandintrest/Animal_Rights.svg' },
+                { name: 'Science', img: './valueandintrest/Science.svg' },
+            ]
+        },
+
+    ]
+
     return (
         <Mainlayout>
-            <div className='flex justify-between items-center'>
-                <div>
-                    <p className='flex gap-1 ml-[40px]'>
-                        <span className='text-[#000000] font-medium text-[14px] w-[115px] h-[21px]'>Current location </span>
-                        <span className='text-[#000000] font-normal text-[14px] w-[87px] h-[21px]'>Lyon, France</span>
-                    </p>
-                </div>
-                <div>
-                    <ToggleSwitch />
-                </div>
-            </div>
-            <div className="min-h-screen">
+            <div className="min-h-screen mt-10">
                 {/* Main Content Container */}
                 <div className="flex flex-col lg:flex-row gap-10 px-4 pt-10 justify-center">
 
                     <div className="lg:col-span-2 space-y-5 w-full lg:w-[70%]">
 
                         <div className="bg-white h-[202px] w-[982px] rounded-[25px] shadow-md p-6 flex flex-col relative">
-                            <div className="flex justify-between">
-                                <div className="flex gap-2 items-center">
-                                    <img src="/userloc.png" className="w-[56px] h-[44px]" />
+                            <div className="flex justify-between items-center">
+                                <div className="flex gap-1 items-center h-[44px]">
+                                    <img src="/userloc.svg" />
                                     <p>
-                                        <span className="font-semibold text-[#000000] text-[14px]">
+                                        <span className="font-semibold text-center text-[#000000] text-[14px]">
                                             HQ
                                         </span>{" "}
-                                        <span className="font-normal text-[#757575] text-[14px]">
+                                        <span className="font-semibold text-[#757575] text-[14px]">
                                             Paris, France
                                         </span>
                                     </p>
                                 </div>
 
-                                <div className="ml-[893px] absolute  bottom-0 right-[-25px] color-[#42C1F8] w-[165px] h-[80px] opacity-80">
+                                <div className="absolute bottom-0 right-0 opacity-40">
                                     <img
-                                        src="/Infinite bottom.png"
+                                        src="/infinityright.svg"
                                         alt="Infinity symbol"
-                                        className="object-contain"
+                                        className="w-full  h-[75px] object-contain rounded-br-[23px] opacity-20"
                                     />
                                 </div>
 
@@ -305,7 +305,7 @@ export default function Profileseenbyvisitors() {
                                                 className="w-[19px] h-[19px] flex items-center justify-center"
                                             >
                                                 <img
-                                                    src={i < 4 ? "/Star.png" : "/StarEmpty.png"}
+                                                    src={i < 4 ? "/Star.svg" : "/StarEmpty.svg"}
                                                     alt="star"
                                                     className="w-[15px] h-[15px]"
                                                 />
@@ -320,130 +320,126 @@ export default function Profileseenbyvisitors() {
                             <div className="absolute -top-[60px] left-1/2 transform -translate-x-1/2">
                                 <div className="relative w-[136px] h-[136px]">
                                     <img
-                                        src="/Logo.png"
+                                        src="/company-seen.svg"
                                         alt="profile"
-                                        className="w-[120px] h-[120px] object-cover"
+                                        className="w-[136px] h-[136px] object-cover"
                                     />
                                 </div>
                             </div>
 
                             {/* Name + Roles */}
                             <div className="text-center">
-                                <h2 className="text-lg font-semibold text-[#000000]">John Doe</h2>
-                                <p className="text-[#757575]">Business & Tech</p>
+                                <h2 className="text-[24px] font-semibold text-[#000000]">Everywhere Jobs</h2>
+                                <p className="text-[#757575] font-medium text-[16px]">Business & Tech</p>
                             </div>
 
-                            <div className="flex items-center gap-4 mt-2 w-full max-w-[443px] h-[51px] mx-auto sm:ml-[320px]">
+                            <div className="flex items-center justify-center gap-4 mt-2 w-full max-w-[443px] h-[51px] mx-auto">
                                 {/* Followers */}
                                 <p className="flex flex-col items-center">
                                     <span className="text-[#29ABE2] text-[16px] font-semibold">12</span>
-                                    <span className="text-[#757575] text-[14px] font-normal">Workers</span>
+                                    <span className="text-[#757575] text-[14px] font-normal">workers</span>
                                 </p>
 
                                 {/* Following */}
                                 <p className="flex flex-col items-center">
                                     <span className="text-[#29ABE2] text-[16px] font-semibold">1,252</span>
-                                    <span className="text-[#757575] text-[14px] font-normal">Followers</span>
+                                    <span className="text-[#757575] text-[14px] font-normal">followers</span>
                                 </p>
 
                                 {/* Follow button */}
-                                <button className="flex gap-1 px-2 py-2 justify-center items-center border border-[#29ABE2] rounded-[10px]">
-                                    <img src="/follow.png" className="w-[15px] h-[13px]" />
+                                <button className="flex w-[89px] h-[32px] gap-1 px-2 py-2 justify-center items-center border border-[#29ABE2] rounded-[10px]">
+                                    <img src="/follow.svg" className="w-[15px] h-[13px]" />
                                     <span className="font-semibold text-[#29ABE2] text-[14px]">Follow</span>
                                 </button>
                             </div>
 
                         </div>
 
+                        <div className="bg-white mx-auto w-[982px] h-[129px] shadow-[0px_4px_6px_0px_#7575751A] rounded-[25px]">
+                            <div className="grid h-full divide-x divide-[#E5E5E5]"
+                                style={{ gridTemplateColumns: "270px 440px 270px" }}>
+                                {/* Contract & Experience */}
+                                <div className="flex flex-col items-center text-center justify-center relative p-[32px_24px]">
+                                    <img src='/bag.svg' className='absolute top-0 left-0 z-0' />
 
-                        <div className="bg-white h-[129px] w-[982px] rounded-[25px] shadow-md mx-auto">
-                            <div className="grid grid-cols-[25%_45%_30%] divide-x divide-gray-200 text-center">
-                                {/* Contract */}
-                                <div className="text-center p-8">
-                                    <h3 className="font-semibold text-[#000000] text-[16px] mb-2">
-                                        Most Frequent Jobs
-                                    </h3>
-                                    {/* Blue pill container */}
-                                    <div className="w-[205px] h-[28px] bg-[#29ABE21A] rounded-full flex items-center justify-center mx-auto">
-                                        <p className="text-[#29ABE2] text-[12px] font-semibold flex items-center gap-2">
+                                    <div className="z-1 h-[24px] flex items-center mb-6">
+                                        <h3 className="z-1 font-semibold text-[16px] leading-[19.78px] text-[#000000]">
+                                            Most Frequent Jobs
+                                        </h3>
+                                    </div>
+                                    <div className="z-1 w-[205px] h-[28px] bg-[#29ABE21A] rounded-[999px] flex items-center justify-center mx-auto">
+                                        <p className="text-[#29ABE2] text-[14px] font-semibold flex items-center gap-2">
                                             <span>Waiter</span>
-                                            <span className="text-[12px]">•</span>
+                                            <img src='/dot.svg' />
                                             <span>Cook</span>
-                                            <span className="text-[12px]">•</span>
+                                            <img src='/dot.svg' />
                                             <span>Barman</span>
                                         </p>
                                     </div>
-
-                                </div>
-
-
-                                {/* Skills */}
-                                <div className="text-center p-8">
-                                    <h3 className="font-semibold text-[#000000] text-[16px] mb-2">Values</h3>
-                                    <div className="flex justify-center items-center gap-6 text-[14px] text-[#757575]">
-                                        {/* Environment */}
-                                        <div className="flex items-center gap-2 h-[28px] whitespace-nowrap">
-                                            <img src="/environment.png" alt="Environment" className="font-poppins font-medium text-[14px] leading-[15.7px] text-[#757575]" />
-                                            <span>Environment</span>
-                                        </div>
-
-                                        {/* Animal Rights */}
-                                        <div className="flex items-center gap-2 h-[28px] whitespace-nowrap">
-                                            <img src="/animal.png" alt="Animal Rights" className="font-poppins font-medium text-[14px] leading-[15.7px] text-[#757575]" />
-                                            <span>Animal Rights</span>
-                                        </div>
-
-                                        {/* Science */}
-                                        <div className="flex items-center gap-2 h-[28px] whitespace-nowrap">
-                                            <img src="/Technology.png" alt="Science" className="font-poppins font-medium text-[14px] leading-[15.7px] text-[#757575]" />
-                                            <span>Science</span>
-                                            <img
-                                                src="/arrow-left.png"
-                                                alt="arrow"
-                                                className="w-[16px] h-[16px] brightness-0 invert-[41%] sepia-[5%] saturate-[0%] hue-rotate-[0deg] opacity-100"
-                                            />
-                                        </div>
-                                    </div>
-
                                 </div>
 
                                 {/* Languages */}
-                                {/* <div className="text-center p-4">
-                                    <h3 className="font-semibold text-[#000000] text-[16px] mb-2">Workstyle</h3>
-                                    <div className="w-[139px] h-[28px] rounded-full bg-[#29ABE21A] flex items-center justify-center mx-auto">
-                                        <span className="font-poppins font-medium text-[14px] leading-[15.7px] text-[#29ABE2] text-center cursor-pointer hover:underline">
-                                            Introvert friendly
+                                <div className="flex flex-col items-center text-center justify-center relative p-[32px_24px]">
+                                    <img src='/diamond.svg' className='absolute top-0 right-0 z-0' />
+
+                                    <div className="h-[24px] flex items-center mb-6">
+                                        <h3 className="z-1 font-semibold text-[16px] leading-[19.78px] text-[#000000]">
+                                            Values
+                                        </h3>
+                                    </div>
+                                    <div className="z-1 flex gap-2 items-center w-full">
+                                        {ValuesAndInterests.map((row, rowIndex) => {
+                                            const key = Object.keys(row)[0]
+                                            return (
+                                                <div
+                                                    key={rowIndex}
+                                                    className="flex justify-center gap-4"
+                                                >
+                                                    {row[key].map((item, index) => (
+                                                        <div
+                                                            key={index}
+                                                            className="flex gap-2 items-center text-center"
+                                                        >
+                                                            <img
+                                                                src={item.img}
+                                                                alt={item.name}
+                                                                className="w-[26px] h-[26px] object-contain"
+                                                            />
+                                                            <span className="text-[14px] text-[#757575]">{item.name}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )
+                                        })}
+                                        <span>
+                                            <img src="/rightaero.svg" />
                                         </span>
                                     </div>
-                                </div> */}
+                                </div>
 
-                                <div className="text-center p-8 relative">
-                                    {/* Background finger image */}
-                                    <img
-                                        src="/Finger.png"
-                                        alt="fingerImage"
-                                        className="absolute w-[88.85px] h-[125.33px] top-[4.23px] right-[10px] opacity-100 brightness-5 saturate-100 invert pointer-events-none"
-                                    />
+                                {/* Skills */}
+                                <div className="flex flex-col items-center text-center justify-center relative p-[32px_24px]">
+                                    <img src='/comp-workstyle.svg' className='absolute top-0 right-0 z-0' />
 
-                                    {/* Content */}
-                                    <div className="relative z-10">
-                                        <h3 className="font-semibold text-[#000000] text-[16px] mb-2">
+                                    <div className="h-[24px] flex items-center mb-4">
+                                        <h3 className="z-1 font-semibold text-[16px] leading-[19.78px] text-[#000000]">
                                             Workstyle
                                         </h3>
-                                        <div className="w-[139px] h-[28px] rounded-full bg-[#29ABE21A] flex items-center justify-center mx-auto">
-                                            <span className="font-poppins font-medium text-[14px] leading-[15.7px] text-[#29ABE2] text-center cursor-pointer">
-                                                Introvert friendly
-                                            </span>
-                                        </div>
+                                    </div>
+                                    <div className="z-1 w-[139px] h-[28px] rounded-full bg-[#29ABE21A] flex items-center justify-center mx-auto">
+                                        <span className="font-poppins font-semibold text-[14px] leading-[15.7px] text-[#29ABE2] text-center cursor-pointer">
+                                            Introvert friendly
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+
                         {/* About Me */}
 
                         <div className="relative bg-white h-[504px] w-[982px] rounded-[25px] shadow-md p-6 flex flex-col items-center">
-                            <h3 className="font-semibold text-[#000000] mb-2">About Me</h3>
+                            <h3 className="font-semibold text-[#000000] mb-5">About Us</h3>
 
                             {/* Map Container */}
                             <div className="relative w-[918px] h-[307px] custom-map-container rounded-[20px] overflow-hidden">
@@ -451,210 +447,43 @@ export default function Profileseenbyvisitors() {
                                 <CustomMap />
 
                                 {/* Left Overlay Image */}
-                                <div className="absolute top-[-77px] left-[-117px] w-[469px] h-[469px] border-[8px] border-white rounded-full overflow-hidden z-[2000] pointer-events-none">
+                                <div className="absolute top-0 left-0 w-[390px] h-[307px] overflow-hidden z-[2000] pointer-events-none">
                                     <img
-                                        src="/HomeImageInsideMap.jpg"
+                                        src="/HomeImageInsideMap.svg"
                                         alt="Illustrative Room"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
+
+                                <span
+                                    className="z-[2000] w-[207px] text-white absolute bottom-5 left-15 text-[12px] font-medium"
+                                >
+                                    Image for illustrative purpose only
+                                </span>
                             </div>
 
                             {/* Fullscreen Button */}
                             <div
                                 onClick={toggleFullscreen}
-                                className="absolute top-[50px] right-[37px] z-[3000] p-[10px] flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out"
+                                className="absolute top-[70px] right-[37px] z-[3000] p-[10px] flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out"
                             >
-                                <img src="./Stepper.png" alt="Fullscreen" className="w-[42px] h-[42px]" />
+                                <img src="./Stepper.svg" alt="Fullscreen" className="w-[42px] h-[42px]" />
                             </div>
 
                             <div className='mt-5 flex flex-col justify-center items-center '>
 
-                                <span className="flex items-center gap-2 text-[#757575] text-[14px]">
-                                    I am a driven worker, I am looking for a short-term contract in the foods & beverages industry.
+                                <span className="flex w-[918px] text-center gap-2 text-[#757575] text-[14px]">
+                                    We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France!We are an innovative software company created in 2025 in the South of France!
                                 </span>
-
-                                <span className='flex gap-2 text-[#757575] font-semibold text-[14px]'>
-                                    <img src="/Person.png" alt="Person" className="w-[16px] h-[16px]" />
-                                    I consider myself as an introvert at work
+                                <span className="font-poppins font-normal text-[14px] text-[#757575] leading-[21px] text-global-5 mb-2">
+                                    <span className="font-semibold">We are introvert friendly: </span>
+                                    <span className="font-semibold italic">You do you, we will not bother you.</span>
                                 </span>
-                                <p className='text-[#757575] text-[14px]'>
-                                    I am authorized to work in {" "}
-                                    <span className='text-[#29ABE2] font-semibold text-[14px]'>
-                                        the European Union
-                                    </span>
-                                </p>
                             </div>
                         </div>
 
-                        {/* Experience */}
-
-                        {/* <div className="bg-white h-[242px] w-[982px] rounded-[25px] shadow-md p-6 flex flex-col">
-                            <h1 className='text-[16px] text-[#000000] font-semibold text-left'> Experience</h1>
-                            <div className='mt-5  flex justify-between items-center'>
-                                <div className='flex gap-10 items-center'>
-                                    <img src='/mcd.png' />
-                                    <span className='text-[#000000] text-[14px] font-semibold'>
-                                        Cook
-                                    </span>
-                                    <span className="font-poppins font-normal text-[14px] leading-[19.78px] tracking-[0] text-[#000000]">
-                                        McDonalds
-                                    </span>
-
-                                    <p className='flex gap-2'>
-                                        <img src='/experince.png' className='h-[18px] w-[12px]' />
-                                        <span className='text-[#757575] text-[14px] font-semibold'>
-                                            10 Months
-                                        </span>
-                                    </p>
-                                    <span className="text-[15px] text-[#757575] font-medium bg-[#F5F5F5] px-2 py-0.5 rounded-full">
-                                        From June 2024
-                                    </span>
-                                </div>
-                                <div>
-                                    <p className="flex items-center gap-2">
-                                        <img src="/Exploc.png" />
-                                        <span className="text-[#757575] text-[14px] font-normal">
-                                            Karachi
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <hr className='mt-5 text-[#CECECE]' />
-
-                            <div className='mt-5  flex justify-between items-center'>
-                                <div className='flex gap-10 items-center'>
-                                    <img src='/cook.png' />
-                                    <span className='text-[#000000] text-[14px] font-semibold'>
-                                        Cook
-                                    </span>
-                                    <span className="font-poppins font-normal text-[14px] leading-[19.78px] tracking-[0] text-[#000000]">
-                                        Foodpanda
-                                    </span>
-
-                                    <p className='flex gap-2'>
-                                        <img src='/experince.png' className='h-[18px] w-[12px]' />
-                                        <span className='text-[#757575] text-[14px] font-semibold'>
-                                            10 Months
-                                        </span>
-                                    </p>
-                                    <span className="text-[15px] text-[#757575] font-medium bg-[#F5F5F5] px-2 py-0.5 rounded-full">
-                                        From June 2024
-                                    </span>
-                                </div>
-                                <div>
-                                    <p className="flex items-center gap-2">
-                                        <img src="/Exploc.png" />
-                                        <span className="text-[#757575] text-[14px] font-normal">
-                                            Karachi
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div> */}
-
-                        {/* Education */}
-
-                        {/* <div className="bg-white h-[242px] w-[982px] rounded-[25px] shadow-md p-6 flex flex-col">
-                            <h1 className='text-[16px] text-[#000000] font-semibold text-left'> Education</h1>
-                            <div className='mt-5  flex justify-between items-center'>
-                                <div className='grid grid-cols-[100px_180px_180px_120px_140px] items-center'>
-                                    <img src='/edu.png' />
-                                    <span className='text-[#000000] text-[14px] font-semibold'>
-                                        Masters Degree
-                                    </span>
-                                    <span className='text-[#000000] text-[14px] font-base'>
-                                        X Business School
-                                    </span>
-                                    <p className='flex gap-2'>
-                                        <img src='/Educationloader.png' className='h-[18px] w-[12px]' />
-                                        <span className='text-[#757575] text-[14px] font-semibold'>
-                                            10 Months
-                                        </span>
-                                    </p>
-                                    <span className="text-[15px] text-[#757575] font-medium bg-[#F5F5F5] px-2 py-0.5 rounded-full">
-                                        From June 2024
-                                    </span>
-                                </div>
-                                <div>
-                                    <p className="flex items-center gap-2">
-                                        <img src="/Exploc.png" />
-                                        <span className="text-[#757575] text-[14px] font-normal">
-                                            Karachi
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <hr className='mt-5 text-[#CECECE]' />
-
-                            <div className='mt-5  flex justify-between items-center'>
-                                <div className='grid grid-cols-[100px_180px_180px_120px_140px] items-center'>
-                                    <img src='/edu.png' />
-                                    <span className='text-[#000000] text-[14px] font-semibold'>
-                                        Level of X certification
-                                    </span>
-                                    <span className='text-[#000000] text-[14px] font-base'>
-                                        X Certification
-                                    </span>
-                                    <p className='flex gap-2'>
-                                        <img src='/Educationloader.png' className='h-[18px] w-[12px]' />
-                                        <span className='text-[#757575] text-[14px] font-semibold'>
-                                            10 Months
-                                        </span>
-                                    </p>
-                                    <span className="text-[15px] text-[#757575] font-medium bg-[#F5F5F5] px-2 py-0.5 rounded-full">
-                                        From June 2024
-                                    </span>
-                                </div>
-                                <div>
-                                    <p className="flex items-center gap-2">
-                                        <img src="/Exploc.png" />
-                                        <span className="text-[#757575] text-[14px] font-normal">
-                                            Karachi
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div> */}
-
-                        {/* Values & Interests */}
-
-                        {/* <div className="bg-white h-[219px] w-[982px] rounded-[25px] shadow-md p-6 flex flex-col items-center">
-                            <h3 className="font-semibold text-[#000000] mb-4">Values & Interests</h3>
-
-                            <div className="flex flex-col gap-4 w-full">
-                                {ValuesAndInterests.map((row, rowIndex) => {
-                                    const key = Object.keys(row)[0]
-                                    return (
-                                        <div
-                                            key={rowIndex}
-                                            className="flex justify-center gap-4"
-                                        >
-                                            {row[key].map((item, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="flex gap-2 items-center text-center"
-                                                >
-                                                    <img
-                                                        src={item.img}
-                                                        alt={item.name}
-                                                        className="w-[26px] h-[26px] object-contain"
-                                                    />
-                                                    <span className="text-[14px] text-[#757575]">{item.name}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )
-                                })}
-                            </div>
-
-                        </div> */}
-
-
                         {/* Our Opportunities */}
-                        <div className="bg-white h-[396px] w-[982px] rounded-[25px] shadow-md p-6 flex flex-col items-center relative">
+                        <div className="bg-white h-[396px] w-[982px] rounded-[25px]  p-6 flex flex-col items-center relative">
                             <h1 className="text-[16px] text-[#000000] font-semibold mb-4 w-[151px] h-[24px]">
                                 Our Opportunities
                             </h1>
@@ -703,16 +532,16 @@ export default function Profileseenbyvisitors() {
                             {/* Scrollable container */}
                             <div
                                 ref={opportunitiesRef}
-                                className="flex gap-5 overflow-x-auto scroll-smooth w-full px-4 scrollbar-hide"
+                                className="flex gap-5 overflow-x-auto scroll-smooth w-full px-4 scrollbar-hide "
                             >
                                 {Opportunities.map((profile, index) => (
                                     <div
                                         key={index}
-                                        className="flex flex-col items-center justify-start w-[265px] h-[196px] border border-[#CECECE] rounded-[20px] bg-white shadow-sm text-center relative flex-shrink-0"
+                                        className="flex flex-col items-center justify-start w-[265px] h-[196px] border border-[#CECECE] rounded-[20px] bg-white shadow-[4px_4px_11px_0px_#75757530] text-center relative flex-shrink-0"
                                     >
                                         {/* Top gradient bar */}
                                         <div
-                                            className="w-full h-[69px] rounded-t-[20px]"
+                                            className="w-full h-[69px] rounded-t-[20px] "
                                             style={{
                                                 background:
                                                     "linear-gradient(180deg, rgba(242, 254, 254, 0.2) 0%, rgba(50, 211, 213, 0.2) 50%, rgba(41, 255, 198, 0.2) 100%)",
@@ -721,16 +550,16 @@ export default function Profileseenbyvisitors() {
 
                                         {/* Share Icon */}
                                         <img
-                                            src={profile.shareIcon}
+                                            src={'/share.svg'}
                                             alt="Share"
-                                            className="absolute top-3 right-2 w-[22px] h-[18px] cursor-pointer"
+                                            className="absolute top-3 right-2 cursor-pointer"
                                         />
 
                                         {/* Profile image (overlapping gradient & white section) */}
                                         <div className="absolute top-[34px]">
                                             <div className="relative">
                                                 <img
-                                                    src={profile.img}
+                                                    src={'/opportunities.svg'}
                                                     className="w-[65px] h-[65px] object-cover"
                                                     alt={profile.name}
                                                 />
@@ -742,10 +571,10 @@ export default function Profileseenbyvisitors() {
                                             <h2 className="text-[#333333] text-[14px] font-semibold">
                                                 {profile.name}
                                             </h2>
-                                            <span className="text-[#757575] text-[12px]">
+                                            <span className="text-[#757575] text-[14px]">
                                                 {profile.text.startsWith("Posted") ? (
                                                     <>
-                                                        <span className="font-bold text-[#333333]">Posted</span>
+                                                        <span className="font-semibold text-[#333333]">Posted</span>
                                                         {profile.text.replace("Posted", "")}
                                                     </>
                                                 ) : (
@@ -819,7 +648,7 @@ export default function Profileseenbyvisitors() {
                                                 {[...Array(5)].map((_, i) => (
                                                     <img
                                                         key={i}
-                                                        src={i < 4 ? "/Star.png" : "/StarEmpty.png"}
+                                                        src={i < 4 ? "/Star.svg" : "/StarEmpty.svg"}
                                                         alt="star"
                                                         className="w-[20px] h-[20px]"
                                                     />
@@ -835,7 +664,7 @@ export default function Profileseenbyvisitors() {
                                                 {/* Header Section */}
                                                 <div className="flex items-center gap-2 mb-2">
                                                     <div className="w-5 h-5 rounded-full flex items-center justify-center">
-                                                        <img src="/check icon.png" className="w-[21px] h-[21px]" />
+                                                        <img src="/prons.svg" className="w-[21px] h-[21px]" />
                                                     </div>
                                                     <span className="text-[14px] font-medium text-[#333333]">Pros</span>
                                                 </div>
@@ -861,7 +690,7 @@ export default function Profileseenbyvisitors() {
                                                 {/* Header Section */}
                                                 <div className="flex items-center gap-2 mb-2">
                                                     <div className="w-5 h-5 rounded-full flex items-center justify-center">
-                                                        <img src="/wrong icon.png" className="w-[21px] h-[21px]" />
+                                                        <img src="/crons.svg" className="w-[21px] h-[21px]" />
                                                     </div>
                                                     <span className="text-[14px] font-medium text-[#333333]">
                                                         Areas of improvements
@@ -891,15 +720,21 @@ export default function Profileseenbyvisitors() {
                         {/* John’s Gallery */}
 
                         <div className="bg-white w-[982px] h-[780px] rounded-[25px] shadow-md p-6 flex flex-col items-center">
-                            <h1 className="text-[16px] text-[#000000] font-semibold mb-4">John’s Gallery</h1>
+                            <h1 className="text-[16px] text-[#000000] font-semibold mb-4">Everywhere Job’s Gallery</h1>
 
                             {/* Main Image */}
-                            <div className="mb-4 flex justify-center w-full">
+                            <div className="mb-4 flex justify-center w-full relative">
                                 <img
-                                    src="/gallery-main.png"
+                                    src="/gallery-main.svg"
                                     className="rounded-[20px] w-[864px] h-[314px] object-cover"
                                     alt="Main gallery"
                                 />
+
+                                <span
+                                    className="w-[207px] text-white absolute bottom-5 right-15 text-[12px] font-medium"
+                                >
+                                    Image for illustrative purpose only
+                                </span>
                             </div>
 
                             {/* Thumbnails Scroll */}
@@ -928,13 +763,19 @@ export default function Profileseenbyvisitors() {
                                     {Array(6).fill("").map((_, i) => (
                                         <div
                                             key={i}
-                                            className="flex flex-col gap-2 w-[257px] h-[339px] flex-shrink-0"
+                                            className="flex flex-col gap-2 w-[257px] h-[339px] flex-shrink-0 relative"
                                         >
                                             <img
                                                 src="/check.jpg"
-                                                className="w-[257px] h-[310px] rounded-[20px] object-cover"
+                                                className="w-[257px] h-[310px] rounded-[20px] object-cover "
                                                 alt="Thumbnail"
                                             />
+                                            <span
+                                                className="w-[207px] text-white absolute bottom-15 left-1/2 -translate-x-1/2 text-[12px] font-medium"
+                                            >
+                                                Image for illustrative purpose only
+                                            </span>
+
                                             <div className="flex justify-between px-2">
                                                 <p className="flex gap-1">
                                                     <span className="text-[#333333] font-semibold text-[14px]">
@@ -1017,7 +858,7 @@ export default function Profileseenbyvisitors() {
                                             <div className="absolute top-[34px]">
                                                 <div className="relative">
                                                     <img
-                                                        src={profile.img}
+                                                        src={'/opportunities.svg'}
                                                         className="rounded-full w-[65px] h-[65px] object-cover "
                                                         alt={profile.name}
                                                     />
@@ -1032,7 +873,7 @@ export default function Profileseenbyvisitors() {
                                             <span className="text-[#757575] text-[12px]">{profile.text}</span>
                                             {/* Stars */}
                                             <div className="flex justify-center gap-[8.4px] mt-[10px] mb-[10px]">
-                                                <button className="w-[229px] h-[38px] flex items-center justify-center gap-2 bg-[#00C1F7] text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-[#00A8E0] transition">
+                                                <button className="w-[229px] h-[38px] flex items-center justify-center gap-2 bg-[#29ABE2] text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-[#00A8E0] transition">
                                                     Follow
                                                 </button>
                                             </div>
@@ -1044,98 +885,90 @@ export default function Profileseenbyvisitors() {
 
                     </div>
 
-                    <div className="bg-white h-auto lg:h-[691px] w-full lg:w-[345px] rounded-[25px] shadow-md p-6 flex flex-col">
-                        {/* Menu Section */}
-                        <div className="space-y-4">
-                            <h3 className="text-[#000000] font-semibold text-[16px]">Menu</h3>
+                    <div className="lg:col-span-1">
+                        <div className="w-[345px] h-[691px] bg-white rounded-[25px] box-shadow: [-4px_4px_6px_0px_#7575751A] p-6 overflow-hidden">
+                            <div className="space-y-4 text-sm">
+                                <h3 className="text-[#000000] font-semibold text-[16px]">Menu</h3>
 
-                            <div className="flex items-center gap-3 cursor-pointer">
-                                <img src="/change-mode.png" alt="change mode" />
-                                <span className="text-[#757575] text-[14px] font-medium">Change mode</span>
-                            </div>
+                                <div className="flex items-center gap-3 cursor-pointer">
+                                    <img src="/change-mode.svg" alt="change mode" />
+                                    <span className="text-[#757575] text-[14px] font-medium">Change mode</span>
+                                </div>
 
-                            <div className="flex items-center gap-3 cursor-pointer">
-                                <img src="/dashboard.png" alt="dashboard" />
-                                <span className="text-[#757575] text-[14px]  font-medium">Dashboard</span>
-                            </div>
+                                <div className="flex items-center gap-3 cursor-pointer">
+                                    <img src="/dashboard.svg" alt="dashboard" />
+                                    <span className="text-[#757575] text-[14px]  font-medium">Dashboard</span>
+                                </div>
 
-                            <div className="flex items-center gap-3 cursor-pointer">
-                                <img src="/messages.png" alt="messages" />
-                                <span className="text-[#757575] text-[14px] font-medium">Messages</span>
-                            </div>
+                                <div className="flex items-center gap-3 cursor-pointer">
+                                    <img src="/messages.svg" alt="messages" />
+                                    <span className="text-[#757575] text-[14px] font-medium">Messages</span>
+                                </div>
 
-                            <div className="flex items-center gap-3 cursor-pointer">
-                                <img src="/faq.png" alt="faq" />
-                                <span className="text-[#757575] text-[14px] font-medium">FAQ</span>
-                            </div>
-                        </div>
-
-                        {/* Divider */}
-                        <div className="border-t border-[#F5F5F5] my-6"></div>
-
-                        {/* Relations */}
-                        <div>
-                            <h3 className="text-[#000000] font-semibold text-[16px] mb-3">Relations</h3>
-                            <div className="flex items-center gap-2">
-                                {/* Count */}
-                                <span className="text-[#29ABE2] text-[16px] font-medium cursor-pointer">
-                                    200+
-                                </span>
-                                {/* Avatars */}
-                                <div>
-                                    <img
-                                        src={'/relation.png'}
-                                        alt="relation"
-                                        className="object-cover"
-                                    />
+                                <div className="flex items-center gap-3 cursor-pointer">
+                                    <img src="/faq.svg" alt="faq" />
+                                    <span className="text-[#757575] text-[14px] font-medium">FAQ</span>
                                 </div>
                             </div>
-                        </div>
+                            <div className="border-t border-[#F5F5F5] my-6"></div>
 
-                        {/* Divider */}
-                        <div className="border-t border-[#F5F5F5] my-6"></div>
+                            <div className="mb-6">
+                                <h3 className="font-semibold text[#000000] text-[16px] mb-3">Similar Companies</h3>
+                                <div className="space-y-3">
+                                    {[...Array(3)].map((_, i) => (
+                                        <div
+                                            key={i}
+                                            className="flex items-center w-[177px] h-[50px]"  // match figma size
+                                        >
+                                            <div className="w-[50px] h-[50px] flex items-center justify-center">
+                                                <img
+                                                    src="/smcompanyicon.svg"
+                                                    alt="Company Icon"
+                                                    className="w-[50px] h-[50px]"
+                                                />
+                                            </div>
 
-                        {/* Similar Profiles */}
-                        <div>
-                            <h3 className="text-[#000000] font-semibold text-[16px] mb-4">Similar Profiles</h3>
 
-                            {/* Profile 1 */}
-                            <div className="flex items-center gap-3 mb-4">
-                                <img src="/jobcard/user1.png" alt="Richard" className="w-[44px] h-[44px] rounded-full object-cover" />
-                                <div>
-                                    <p className="text-[14px] font-semibold text-[#000000] flex items-center gap-1">
-                                        Richard Branson
-                                        <img src="/badge1.svg" className="w-4 h-4" />
-                                    </p>
-                                    <p className="text-[13px] text-[#757575]">Founder at Virgin group</p>
+                                            <div>
+                                                <p className="font-poppins text-[#333333] font-semibold text-[14px] leading-[16px]">
+                                                    Everywhere Jobs
+                                                </p>
+                                                <p className="font-poppins font-normal text-[12px] leading-[20px] text-[#757575]">
+                                                    Business & Tech
+                                                </p>
+
+                                            </div>
+                                        </div>
+
+                                    ))}
                                 </div>
                             </div>
+                            <div className="border-t border-[#F5F5F5] my-6"></div>
 
-                            {/* Profile 2 */}
-                            <div className="flex items-center gap-3">
-                                <img src="/jobcard/user2.png" alt="Nidhi" className="w-[44px] h-[44px] rounded-full object-cover" />
-                                <div>
-                                    <p className="text-[14px] font-semibold text-[#000000] flex items-center gap-1">
-                                        Nidhi Nagori
-                                        <img src="/badge1.svg" className="w-4 h-4" />
-                                    </p>
-                                    <p className="text-[13px] text-[#757575]">CEO & Founder - Globally</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Divider */}
-                        <div className="border-t border-[#F5F5F5] my-6"></div>
-
-                        {/* Ad */}
-                        <div className="w-full">
                             <h3 className="text-[#CECECE] font-semibold text-[16px] mb-2">Ad</h3>
 
-                            <img
-                                src="/ad.png"
-                                alt="ad"
-                                className="w-[281px] h-[62px] object-cover rounded-[20px]"
-                            />
+                            <div className="relative rounded-lg h-33 w-full overflow-hidden">
+                                <div className="relative overflow-hidden">
+                                    <img
+                                        src="/admenuimg.svg"
+                                        alt="filter"
+                                        className="w-[281px] h-[134px] rounded-[20px] object-cover"
+                                    />
+                                </div>
+
+
+                                <div className="absolute top-2 left-0 right-4 px-4">
+                                    <div className="flex justify-between items-center">
+                                        <span className="font-poppins font-semibold text-[12px] leading-[15.7px] text-white">
+                                            Flat in Paris
+                                        </span>
+                                        <span className="font-poppins font-medium text-[12px] leading-[15.99px] text-white border border-white px-3 py-1 rounded-md text-center">
+                                            ABC Agency
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

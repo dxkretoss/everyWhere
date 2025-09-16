@@ -183,7 +183,7 @@ export default function jobOfferSeenByUser() {
                             View as Visitor
                         </button>
 
-                        <ToggleSwitch />
+                        <ToggleSwitch title="Recruiting" />
                     </div>
                 </div>
             </div>
@@ -206,13 +206,13 @@ export default function jobOfferSeenByUser() {
                                 Waiter
                             </span>
 
-                            <img src='/editblack.svg' className='absolute -top-[35px] right-100' />
+                            <img src='/editblack.svg' className='absolute -top-[35px] right-100 cursor-pointer' />
 
                             {/* Location Pin */}
                             <div className="flex justify-end gap-2 mb-3">
                                 <span className="font-poppins text-[#000000]  font-medium text-[14px]">Paris, France</span>
                                 <img src="/location.svg" alt="Location" className="w-[16px] h-[20px]" />
-                                <img src="/editblue.svg" alt="Location" className="w-[20px] h-[20px]" />
+                                <img src="/Editblue.svg" alt="Location" className="w-[20px] h-[20px] cursor-pointer" />
                             </div>
 
                             <div className="flex items-center justify-between mb-4 h-[369px]">
