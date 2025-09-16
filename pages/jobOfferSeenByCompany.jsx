@@ -155,21 +155,35 @@ export default function jobOfferSeenByUser() {
                 <div className="h-[27px] flex flex-col sm:flex-row justify-between items-center mb-4 sm:mb-0">
                     {/* Left section */}
                     <div className="flex items-center mb-2 sm:mb-0">
-                        <p className="flex items-center gap-1 sm:gap-2">
+                        <div className="flex items-center gap-1 sm:gap-2">
                             <img
-                                src="/basil_user-plus-outline.png"
+                                src="/user-outline.svg"
                                 className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]"
                                 alt="Applicants"
                             />
-                            <span className="text-[#000000] font-medium text-[12px] sm:text-[14px]">
-                                90 applicants
-                            </span>
-                        </p>
+                            <p className='flex gap-1 items-end'>
+                                <span className="text-[#000000] text-[20px]">
+                                    90
+                                </span>
+                                <span className="text-[#000000] font-medium text-[16px]">
+                                    applicants
+                                </span>
+                            </p>
+                        </div>
                     </div>
 
                     {/* Right section */}
-                    <div>
-                        <ToggleSwitch title="Recruiting" />
+                    <div className="flex items-center">
+                        <button
+                            className="w-[157px] h-[46px] flex items-center justify-center 
+                    gap-[6px] rounded-[10px]
+                    border border-[#000000]/60 text-[#000000] text-[14px] font-medium"
+                        >
+                            <img src="/eyes.svg" alt="View icon" className="w-[19px] h-[13px]" />
+                            View as Visitor
+                        </button>
+
+                        <ToggleSwitch />
                     </div>
                 </div>
             </div>
@@ -182,121 +196,117 @@ export default function jobOfferSeenByUser() {
                     <div className="lg:col-span-2 space-y-5">
 
                         {/* Job Header Card */}
-                        <div className="bg-white rounded-[25px] shadow-sm p-6 top-[185px] left-[50px] w-[982px] h-[459px]">
-                            <div className="relative flex items-start justify-between mb-4">
-                                {/* Left Section - Job Details */}
-                                <div>
-                                    <span className="absolute -top-[45px] left-1/2 transform -translate-x-1/2 
+                        <div className="bg-white rounded-[25px] p-6 shadow-[0px_4px_6px_0px_#7575751A] w-[982px] h-[459px] relative">
+                            <span className="absolute -top-[25px] left-1/2 transform -translate-x-1/2 
                                             w-[132px] h-[48px] 
                                             rounded-full 
                                             bg-black text-white 
                                             flex items-center justify-center 
-                                            font-poppins font-medium text-base leading-[24px]">
-                                        Waiter
-                                    </span>
+                                            font-poppins font-semibold text-[26px] leading-[24px]">
+                                Waiter
+                            </span>
 
-                                    <div className="flex flex-col items-center text-center gap-3">
-                                        {/* Logo */}
-                                        <img
-                                            src="/Frame 1618873050.png"
-                                            alt="Job Logo"
-                                            className="w-[112px] h-[112px] rounded-[10px] object-cover"
-                                        />
+                            <img src='/editblack.svg' className='absolute -top-[35px] right-100' />
 
-                                        {/* Job Title */}
-                                        <h1 className="w-[206px] font-poppins font-semibold text-2xl leading-[20px] text-gray-900 text-center">
-                                            Everywhere Jobs
-                                        </h1>
+                            {/* Location Pin */}
+                            <div className="flex justify-end gap-2 mb-3">
+                                <span className="font-poppins text-[#000000]  font-medium text-[14px]">Paris, France</span>
+                                <img src="/location.svg" alt="Location" className="w-[16px] h-[20px]" />
+                                <img src="/editblue.svg" alt="Location" className="w-[20px] h-[20px]" />
+                            </div>
 
-                                        <p className="w-[130px] font-poppins font-normal text-sm leading-5 text-gray-600 text-center">
-                                            Business & Tech
-                                        </p>
+                            <div className="flex items-center justify-between mb-4 h-[369px]">
+                                {/* Left Section - Job Details */}
+                                <div className="flex flex-col items-center text-center gap-3">
+                                    {/* Logo */}
+                                    <img
+                                        src="/jobsicon.svg"
+                                        alt="Job Logo"
+                                        className="w-[120px] h-[120px]"
+                                    />
+
+                                    {/* Job Title */}
+                                    <h1 className="w-[206px] font-poppins font-semibold text-[24px] leading-[20px] text-[#000000] text-center">
+                                        Everywhere Jobs
+                                    </h1>
+
+                                    <p className="w-[130px] font-poppins font-medium text-[16px] leading-5 text-[#757575] text-center">
+                                        Business & Tech
+                                    </p>
+
+                                    {/* Rating */}
+                                    <div className="flex items-center justify-center">
+                                        {[...Array(5)].map((_, i) => (
+                                            <div
+                                                key={i}
+                                                className="w-[19px] h-[19px] flex items-center justify-center"
+                                            >
+                                                <img
+                                                    src={i < 4 ? "/Star.svg" : "/StarEmpty.svg"}
+                                                    alt="star"
+                                                    className="w-[22px] h-[22px]"
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                    {/* Salary */}
+                                    <p className="mt-2 font-poppins font-medium text-[16px] leading-[20px] text-[#757575]">
+                                        30K € / Year
+                                    </p>
+
+                                    {/* Divider */}
+                                    <div className="w-[411px] border-t border-[1px] border-gray-300 my-3"></div>
 
 
-                                        {/* Rating */}
-                                        <div className="flex items-center justify-center">
-                                            <img
-                                                src="/Frame 1618873051.png"
-                                                alt="Rating Stars"
-                                                className="w-[112px] h-[22px] object-contain"
-                                            />
+                                    {/* Job Details */}
+                                    <div className="grid grid-cols-3 gap-6 text-sm w-full">
+                                        <div className="flex flex-col gap-2">
+                                            <p className="font-poppins font-medium text-[14px] leading-6 text-[#000000]">
+                                                Remote Rate
+                                            </p>
+                                            <span className="w-[42px] h-[28px] rounded-full bg-[#F5F5F5] flex items-center justify-center mx-auto font-poppins font-medium text-[#757575] text-[15px] leading-5">
+                                                0%
+                                            </span>
                                         </div>
-                                        {/* Salary */}
-                                        <p className="mt-6 font-poppins font-medium text-[16px] leading-[20px] text-[#757575]">
-                                            30K € / Year
-                                        </p>
-
-                                        {/* Divider */}
-                                        <div className="w-[411px] border-t border-[1px] border-gray-300 my-3"></div>
-
-
-                                        {/* Job Details */}
-                                        <div className="grid grid-cols-3 gap-6 text-sm w-full">
-                                            <div className="flex flex-col gap-2">
-                                                <p className="font-poppins font-medium text-sm leading-6 text-gray-500">
-                                                    Remote Rate
-                                                </p>
-                                                <span className="w-[42px] h-[28px] rounded-full bg-gray-100 flex items-center justify-center mx-auto font-poppins font-medium text-sm leading-5">
-                                                    0%
-                                                </span>
-                                            </div>
-                                            <div className="flex flex-col gap-2">
-                                                <p className="font-poppins font-medium text-sm leading-6 text-gray-500">
-                                                    Starting Date
-                                                </p>
-                                                <span className="w-[80px] h-[28px] px-3 py-1 rounded-full bg-[rgba(75,221,182,0.1)]  text-[#4BDDB6] flex items-center justify-center mx-auto font-poppins font-medium text-sm leading-5">02/09/25</span>
-                                            </div>
-                                            <div className="flex flex-col gap-2">
-                                                <p className="text-gray-500">Duration</p>
-                                                <span className="w-[64px] h-[28px] rounded-full bg-gray-100 flex items-center justify-center mx-auto font-poppins font-medium text-sm leading-5">1 year</span>
-                                            </div>
+                                        <div className="flex flex-col gap-2">
+                                            <p className="font-poppins font-medium text-[14px] leading-6 text-[#000000]">
+                                                Starting Date
+                                            </p>
+                                            <span className="w-[80px] h-[28px] px-3 py-1 rounded-[999px] bg-[#4BDDB61A] text-[#4BDDB6] flex items-center justify-center mx-auto font-poppins font-medium text-[15px] leading-5">02/09/25</span>
+                                        </div>
+                                        <div className="flex flex-col gap-2">
+                                            <p className="font-poppins font-medium text-[14px] leading-6 text-[#000000]">
+                                                Duration
+                                            </p>
+                                            <span className="w-[64px] h-[28px] rounded-[999px] bg-[#F5F5F5] flex items-center justify-center mx-auto font-poppins font-medium text-[#757575] text-[15px] leading-5">1 year</span>
                                         </div>
                                     </div>
-
-
                                 </div>
-
                                 {/* Right Section - Location & Map */}
-                                <div className="flex flex-col items-end">
-                                    {/* Location Pin */}
-                                    <div className="relative flex items-center gap-2 mb-3">
-                                        <span className="text-sm font-poppins text-[rgba(0,0,0,1)]">Paris, France</span>
-                                        <img src="/location.png" alt="Location" className="w-4 h-4" />
-
-                                        <div className="ml-auto">
-                                            <img src="/Editblue.png" alt="edit" className="cursor-pointer" />
-                                        </div>
-                                    </div>
-
-
+                                <div className="flex flex-col items-center">
                                     {/* Map Image */}
-                                    <div className="w-[483px] h-[369px] rounded-xl overflow-hidden shadow">
-                                        {/* <img
-                                                src="/Group 1000009838.png"  // replace with your uploaded map image path
-                                                alt="Map"
-                                                className="w-full h-full object-cover"
-                                            /> */}
-                                        <div className="h-[calc(100vh-210px)] custom-map-container">
+                                    <div className="w-[483px] h-[369px] rounded-xl overflow-hidden shadow relative">
+                                        <div className=" h-[385px] custom-map-container">
                                             <CustomMap />
                                         </div>
                                         <div
                                             onClick={toggleFullscreen}
-                                            className="absolute top-[30px] right-[17px] z-[1000] rounded-[12px] p-[10px] flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out"
+                                            className="absolute top-[10px] right-[10px] z-[1000] rounded-[12px] p-[10px] flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out"
                                         >
-                                            <img src="./Stepper.png" alt="Fullscreen" className="w-[42px] h-[42px]" />
+                                            <img src="./Stepper.svg" alt="Fullscreen" className="w-[42px] h-[42px]" />
                                         </div>
 
                                         <div
                                             id="show-accommodations-btn"
-                                            class="h-[37px] absolute bottom-2 right-12 bg-white px-[15px] py-[10px] rounded-[10px] shadow-[0_3px_12px_rgba(0,0,0,0.15)] text-[#00a0df] text-[12px] flex items-center gap-[10px] z-[999] whitespace-nowrap"
+                                            class="h-[37px] absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-[15px] py-[10px] rounded-[10px] shadow-[0_3px_12px_rgba(0,0,0,0.15)] text-[#00a0df] text-[12px] flex items-center gap-[10px] z-[999] whitespace-nowrap"
                                         >
                                             <input
                                                 type="checkbox"
                                                 id="accommodation-toggle"
                                                 class="peer appearance-none w-4 h-4 border border-[#00a0df] rounded-sm cursor-pointer 
-    checked:bg-[#00a0df] checked:border-[#00a0df]
-    checked:after:content-['✔'] checked:after:text-white checked:after:text-[10px] 
-    checked:after:flex checked:after:items-center checked:after:justify-center"
+                                        checked:bg-[#00a0df] checked:border-[#00a0df]
+                                        checked:after:content-['✔'] checked:after:text-white checked:after:text-[10px] 
+                                        checked:after:flex checked:after:items-center checked:after:justify-center"
                                             />
                                             <label htmlFor="accommodation-toggle" class="cursor-pointer select-none">
                                                 Show nearby accommodations
@@ -310,83 +320,82 @@ export default function jobOfferSeenByUser() {
 
 
                         {/* Skills and Languages Section */}
-                        <div className="bg-white mx-auto w-[982px] h-[199px] shadow-[0_4px_6px_rgba(117,117,117,0.1)] rounded-[25px] p-[32px_24px]">
-                            <div className="grid grid-cols-3 h-full">
+                        <div className="bg-white mx-auto w-[982px] h-[199px] shadow-[0px_4px_6px_0px_#7575751A] rounded-[25px]">
+                            <div className="grid grid-cols-3 h-full  divide-x divide-[#E5E5E5]">
                                 {/* Contract & Experience */}
-                                <div className="flex flex-col items-center text-center justify-center">
-                                    <div className="flex items-center justify-center mb-2">
-                                        <h3 className="font-semibold text-[16px] leading-[19.78px] text-[#333333] mb-6">
+                                <div className="flex flex-col items-center text-center justify-center relative p-[32px_24px]">
+                                    <img src='/contract-bg.svg' className='absolute top-0 right-0 z-0' />
+
+                                    <div className="z-1 h-[24px] flex items-center mb-6">
+                                        <h3 className="font-semibold text-[16px] leading-[19.78px] text-[#000000]">
                                             Contract & Experience
                                         </h3>
-                                        <img src="/Editgrey.png" alt="edit" className="cursor-pointer" />
+                                        <div className="ml-auto">
+                                            <img src="/Editgrey.svg" alt="edit" className='absolute top-8 right-5 w-[18px] h-[18px] cursor-pointer' />
+                                        </div>
                                     </div>
+
                                     <div className="mb-6">
                                         <img
-                                            src="/Vector (2).png"
+                                            src="/experince.svg"
                                             alt="Contract Icon"
-                                            className="w-[25px] h-[35px] ml-[10px] mt-[5px]"
+                                            className="z-1 w-[25px] h-[32px]"
                                         />
                                     </div>
 
-                                    <div className="flex items-center space-x-2">
-                                        <span className="px-3 py-1 rounded-full bg-[rgba(41,171,226,0.1)] text-[#29ABE2] text-[12px] font-semibold">
+                                    <div className="z-1 flex items-center space-x-2">
+                                        <span className="px-3 py-1 rounded-[999px] bg-[#29ABE21A] text-[#29ABE2] text-[14px] font-semibold">
                                             Work study
                                         </span>
-                                        <span className="px-3 py-1 rounded-full bg-[#F5F5F5] text-[#757575] text-[12px] font-semibold">
+                                        <span className="px-3 py-1 rounded-[999px] bg-[#F5F5F5] text-[#757575] text-[14px] font-semibold">
                                             1 Year
                                         </span>
                                     </div>
                                 </div>
 
                                 {/* Languages */}
-                                <div className="w-full flex flex-col items-center text-center justify-center border-x border-[#F5F5F5]">
-                                    {/* <div className="flex items-center justify-center mb-2">
-                                        <h3 className="font-semibold text-[16px] leading-[19.78px] text-[#333333] mb-6">
+                                <div className="flex flex-col items-center text-center justify-center relative p-[32px_24px]">
+                                    <img src='/lan-bg.svg' className='absolute top-0 right-0 z-0' />
+
+                                    <div className="h-[24px] flex items-center mb-6">
+                                        <h3 className="z-1 font-semibold text-[16px] leading-[19.78px] text-[#000000]">
                                             Languages
                                         </h3>
-                                        <img
-                                            src="/Editblue.png"
-                                            alt="edit"
-                                            className="cursor-pointer ml-2 w-[16px] h-[16px]"
-                                        />
-                                    </div> */}
-                                    <div className="text-center p-4">
-                                        <div className="relative flex items-center mb-4">
-                                            {/* Centered Title */}
-                                            <h3 className="absolute left-1/2 transform -translate-x-1/2 font-semibold text-[#000000] text-[16px]">
-                                                Languages
-                                            </h3>
-
-                                            {/* Right Icon */}
-                                            <div className="ml-auto">
-                                                <img src="/Editgrey.png" alt="edit" className="cursor-pointer" />
-                                            </div>
+                                        <div className="ml-auto">
+                                            <img src="/Editgrey.svg" alt="edit" className='absolute top-8 right-5 w-[18px] h-[18px] cursor-pointer' />
                                         </div>
+                                    </div>
 
-
-                                        <div className="flex justify-center items-center space-x-6 mb-6">
+                                    <div className="z-1 flex gap-10">
+                                        <div className='flex flex-col gap-6 items-center'>
                                             <img
-                                                src="/image (1).png"
+                                                src="/Fluent.svg"
                                                 alt="French flag"
                                                 className="w-[44px] h-[32px] rounded-sm object-cover"
                                             />
-                                            <img
-                                                src="/image 16.png"
-                                                alt="UK flag"
-                                                className="w-[44px] h-[32px] rounded-sm object-cover"
-                                            />
-                                            <img
-                                                src="/image 17.png"
-                                                alt="Italian flag"
-                                                className="w-[44px] h-[32px] rounded-sm object-cover"
-                                            />
-                                        </div>
-
-                                        <div className="flex items-center space-x-2">
-                                            <span className="px-3 py-1 rounded-full bg-[rgba(41,171,226,0.1)] text-[#29ABE2] text-[12px] font-semibold">
+                                            <span className="px-3 py-1 rounded-[999px] bg-[#29ABE21A] text-[#29ABE2] text-[14px] font-semibold">
                                                 Fluent
                                             </span>
-                                            <span className="px-3 py-1 rounded-full bg-[#F5F5F5] text-[#757575] text-[12px] font-semibold">
+                                        </div>
+                                        <div className='flex flex-col gap-6 items-center'>
+                                            <div className='flex gap-4 items-center '>
+                                                <img
+                                                    src="/other1.svg"
+                                                    alt="UK flag"
+                                                    className="w-[44px] h-[32px] rounded-sm object-cover"
+                                                />
+                                                <img
+                                                    src="/other2.svg"
+                                                    alt="Italian flag"
+                                                    className="w-[44px] h-[32px] rounded-sm object-cover"
+                                                />
+                                            </div>
+                                            <span className="
+                                                    flex w-fit items-center justify-center
+                                                    px-3 py-1 rounded-[999px]
+                                                    bg-[#F5F5F5] text-[#757575]
+                                                    text-[14px] font-semibold
+                                                ">
                                                 Others
                                             </span>
                                         </div>
@@ -394,63 +403,43 @@ export default function jobOfferSeenByUser() {
                                 </div>
 
                                 {/* Skills */}
-                                <div className="flex flex-col items-center text-center justify-center w-full">
-                                    {/* <div className="flex items-center justify-center mb-2">
-                                        <h3 className="font-semibold text-[16px] leading-[20px] text-[#333333]">
+                                <div className="flex flex-col items-center text-center justify-center relative p-[32px_24px]">
+                                    <img src='/skills-bg.svg' className='absolute top-0 right-0 z-0' />
+
+                                    <div className="h-[24px] flex items-center mb-4">
+                                        <h3 className="z-1 font-semibold text-[16px] leading-[19.78px] text-[#000000]">
                                             Skills
                                         </h3>
-                                        <img
-                                            src="/Editgrey.png"
-                                            alt="edit"
-                                            className="cursor-pointer ml-2 w-[18px] h-[18px]"
-                                        />
-                                    </div> */}
 
-                                    <div className="text-center p-4">
-                                        <div className="relative flex items-center mb-2">
-                                            {/* Centered Title */}
-                                            <h3 className="absolute left-1/2 transform -translate-x-1/2 font-semibold text-[16px] leading-[20px] text-[#333333]">
-                                                Skills
-                                            </h3>
-
-                                            {/* Right Icon */}
-                                            <div className="ml-auto">
-                                                <img src="/Editgrey.png" alt="edit" className="cursor-pointer" />
-                                            </div>
+                                        <div className="ml-auto">
+                                            <img src="/Editgrey.svg" alt="edit" className='absolute top-8 right-5 w-[18px] h-[18px] cursor-pointer' />
                                         </div>
+                                    </div>
 
-                                        <div className="flex flex-col space-y-3">
-                                            <span className="px-3 py-1 rounded-full bg-[#F5F5F5] text-[#757575] text-[12px] font-semibold whitespace-nowrap">
-                                                Customer Service
-                                            </span>
-                                            <span className="px-3 py-1 rounded-full bg-[#F5F5F5] text-[#757575] text-[12px] font-semibold whitespace-nowrap">
-                                                Customer Relationship
-                                            </span>
-                                            <span className="px-3 py-1 rounded-full bg-[#F5F5F5] text-[#757575] text-[12px] font-semibold whitespace-nowrap">
-                                                Drink Preparation
-                                            </span>
-                                        </div>
+                                    <div className="z-1 flex flex-col space-y-1 items-center">
+                                        <span className="px-3 py-1 flex w-fit items-center justify-center rounded-full bg-[#F5F5F5] text-[#757575] text-[14px] font-semibold whitespace-nowrap">
+                                            Customer Service
+                                        </span>
+                                        <span className="px-3 py-1 flex w-fit items-center justify-center rounded-full bg-[#F5F5F5] text-[#757575] text-[14px] font-semibold whitespace-nowrap">
+                                            Customer Relationship
+                                        </span>
+                                        <span className="px-3 py-1 flex w-fit items-center justify-center rounded-full bg-[#F5F5F5] text-[#757575] text-[14px] font-semibold whitespace-nowrap">
+                                            Drink Preparation
+                                        </span>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
-                        <div className="p-6 bg-white mx-auto w-[982px] flex flex-col justify-start items-center bg-global-12 rounded-[24px] shadow-[0px_4px_6px_#75757519] px-[20px] py-[20px]">
-                            <div className="relative w-full flex items-center">
-                                {/* Centered Text */}
-                                <h1 className="absolute left-1/2 transform -translate-x-1/2 text-[16px] text-[#000000] font-semibold">
-                                    Description
-                                </h1>
+                        <div className="bg-white mx-auto w-[982px] flex flex-col justify-start items-center bg-global-12 rounded-[24px] shadow-[0px_4px_6px_#7575751A] px-[20px] py-[20px] relative">
+                            <span className="text-[16px] text-[#000000] font-poppins font-semibold leading-[24px] text-global-1">
+                                Description
+                            </span>
 
-                                {/* Right Side Icon */}
-                                <img
-                                    src="/Editgrey.png"
-                                    alt="edit"
-                                    className="cursor-pointer ml-auto"
-                                />
+                            <div className="ml-auto">
+                                <img src="/Editgrey.svg" alt="edit" className='absolute top-5 right-5 w-[18px] h-[18px] cursor-pointer' />
                             </div>
-                            <span className="font-poppins font-normal text-sm text-gray-700 leading-5 text-center mt-1.5 block">
+                            <span className="font-poppins font-medium text-[14px] text-[#757575] leading-5 text-center mt-1.5 block">
                                 Our company is looking for a new talent!
                                 <br />
                                 You will accomplish the following tasks within a team of 10 persons:
@@ -458,51 +447,42 @@ export default function jobOfferSeenByUser() {
 
 
                             <div className="flex flex-col justify-start items-center w-full mt-[24px] mb-[10px]">
-                                <div className="top-[994px] left-[83px] w-[918px] h-[1px] border-t border-gray-300 opacity-100"></div>
+                                <div className="top-[994px] left-[83px] w-[918px] h-[1px] border-t border-[#DEDDDD] opacity-100"></div>
 
                                 {/* Responsibilities */}
                                 <div className="flex flex-col gap-[8px] justify-start items-start w-full mt-[20px] mx-[142px]">
                                     {/* Centered Heading */}
-                                    <div className="relative w-full flex items-center">
-                                        {/* Centered Text */}
-                                        <h1 className="w-full text-center text-[16px] font-poppins font-semibold leading-[24px] text-global-1">
-                                            Responsibilities
-                                        </h1>
-
-                                        {/* Right Side Icon */}
-                                        <img
-                                            src="/Editgrey.png"
-                                            alt="edit"
-                                            className="cursor-pointer ml-auto"
-                                        />
-                                    </div>
-                                    {/* <span className="w-full text-center text-[16px] font-poppins font-semibold leading-[24px] text-global-1">
+                                    <span className="w-full text-center text-[16px] font-poppins font-semibold leading-[24px] text-global-1">
                                         Responsibilities
-                                    </span> */}
+                                    </span>
+
+                                    <div className="ml-auto">
+                                        <img src="/Editgrey.svg" alt="edit" className='absolute top-35 right-5 w-[18px] h-[18px] cursor-pointer' />
+                                    </div>
 
                                     <div className="flex flex-col gap-4 w-full items-center">
                                         <div className="flex flex-col gap-4 items-start">
                                             <div className="flex items-center gap-3">
                                                 <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                                                    <img src="/Vector (3).png" alt="Check" className="w-5 h-5" />
+                                                    <img src="/Responsibilities-text.svg" alt="Check" className="w-5 h-5" />
                                                 </div>
-                                                <span className="font-poppins font-normal text-sm text-gray-700" style={{ lineHeight: '20px' }}>
+                                                <span className="font-poppins text-[14px] text-[#757575]" style={{ lineHeight: '20px' }}>
                                                     Welcome customers in our restaurant and invite them to take seat
                                                 </span>
                                             </div>
                                             <div className="flex items-center gap-3">
                                                 <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                                                    <img src="/Vector (3).png" alt="Check" className="w-5 h-5" />
+                                                    <img src="/Responsibilities-text.svg" alt="Check" className="w-5 h-5" />
                                                 </div>
-                                                <span className="font-poppins font-normal text-sm text-gray-700" style={{ lineHeight: '20px' }}>
+                                                <span className="font-poppins text-[14px] text-[#757575]" style={{ lineHeight: '20px' }}>
                                                     Take notes of their orders or register them on our tablets
                                                 </span>
                                             </div>
                                             <div className="flex items-center gap-3">
                                                 <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                                                    <img src="/Vector (3).png" alt="Check" className="w-5 h-5" />
+                                                    <img src="/Responsibilities-text.svg" alt="Check" className="w-5 h-5" />
                                                 </div>
-                                                <span className="font-poppins font-normal text-sm text-gray-700" style={{ lineHeight: '20px' }}>
+                                                <span className="font-poppins text-[14px] text-[#757575]" style={{ lineHeight: '20px' }}>
                                                     Bring ordered meals at their table and check whether they are satisfied
                                                 </span>
                                             </div>
@@ -516,78 +496,37 @@ export default function jobOfferSeenByUser() {
                                 <div className="top-[994px] left-[83px] w-[918px] h-[1px] border-t border-gray-300 opacity-100"></div>
                                 {/* Why Join Us */}
                                 <div className="flex flex-col gap-[8px] justify-start items-center w-full mt-[18px] mx-[190px]">
-                                    <div className="relative w-full flex items-center">
-                                        {/* Centered Text */}
-                                        <h1 className="w-full text-center text-[16px] font-poppins font-semibold leading-[24px] text-global-1">
-                                            Why Join Us
-                                        </h1>
-
-                                        {/* Right Side Icon */}
-                                        <img
-                                            src="/Editgrey.png"
-                                            alt="edit"
-                                            className="cursor-pointer ml-auto"
-                                        />
-                                    </div>
-
-                                    {/* <span className="text-[16px] font-poppins font-semibold leading-[24px] text-global-1">
+                                    <span className="text-[16px] font-poppins font-semibold leading-[24px] text-global-1">
                                         Why Join Us
-                                    </span> */}
-                                    {/* <div className="flex justify-between items-center w-full mr-[10px]">
-                                            <div className="flex flex-col gap-[12px] justify-start items-center">
-                                                <img
-                                                    src="/images/img_tabler_hand_click.svg"
-                                                    alt="Hand Click"
-                                                    className="w-[26px] h-[26px]"
-                                                />
-                                                <img
-                                                    src="/images/img_tabler_hand_click.svg"
-                                                    alt="Hand Click"
-                                                    className="w-[26px] h-[26px]"
-                                                />
-                                                <img
-                                                    src="/images/img_tabler_hand_click.svg"
-                                                    alt="Hand Click"
-                                                    className="w-[26px] h-[26px]"
-                                                />
-                                            </div>
-                                            <div className="flex flex-col gap-[16px] justify-start items-start w-full">
-                                                <span className="text-[14px] font-poppins font-normal leading-[21px] text-global-5">
-                                                    Easy e-learning training and personalized integration program
-                                                </span>
-                                                <span className="text-[14px] font-poppins font-normal leading-[21px] text-global-5">
-                                                    We adapt to your schedule so you can balance work and personal life
-                                                </span>
-                                                <span className="text-[14px] font-poppins font-normal leading-[21px] text-global-5">
-                                                    At each service, a meal is offered to you to enjoy, to eat in or take away
-                                                </span>
-                                            </div>
-                                        </div> */}
+                                    </span>
 
+                                    <div className="ml-auto">
+                                        <img src="/Editgrey.svg" alt="edit" className='absolute top-80 right-5 w-[18px] h-[18px] cursor-pointer' />
+                                    </div>
 
                                     <div className="flex flex-col gap-4 w-full items-center">
                                         <div className="flex flex-col gap-4 items-start">
                                             <div className="flex items-center gap-3">
                                                 <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                                                    <img src="/tabler_hand-click.png" alt="Check" className="w-5 h-5" />
+                                                    <img src="/whyjoinus-text.svg" alt="Check" className="w-5 h-5" />
                                                 </div>
-                                                <span className="font-poppins font-normal text-sm text-gray-700" style={{ lineHeight: '20px' }}>
+                                                <span className="font-poppins text-[14px] text-[#757575]" style={{ lineHeight: '20px' }}>
                                                     Easy e-learning training and personalized integration program
                                                 </span>
                                             </div>
                                             <div className="flex items-center gap-3">
                                                 <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                                                    <img src="/tabler_hand-click.png" alt="Check" className="w-5 h-5" />
+                                                    <img src="/whyjoinus-text.svg" alt="Check" className="w-5 h-5" />
                                                 </div>
-                                                <span className="font-poppins font-normal text-sm text-gray-700" style={{ lineHeight: '20px' }}>
+                                                <span className="font-poppins text-[14px] text-[#757575]" style={{ lineHeight: '20px' }}>
                                                     We adapt to your schedule so you can balance work and personal life
                                                 </span>
                                             </div>
                                             <div className="flex items-center gap-3">
                                                 <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
-                                                    <img src="/tabler_hand-click.png" alt="Check" className="w-5 h-5" />
+                                                    <img src="/whyjoinus-text.svg" alt="Check" className="w-5 h-5" />
                                                 </div>
-                                                <span className="font-poppins font-normal text-sm text-gray-700" style={{ lineHeight: '20px' }}>
+                                                <span className="font-poppins text-[14px] text-[#757575]" style={{ lineHeight: '20px' }}>
                                                     At each service, a meal is offered to you to enjoy, to eat in or take away
                                                 </span>
                                             </div>
@@ -598,135 +537,122 @@ export default function jobOfferSeenByUser() {
 
                                 <div className="top-[994px] left-[83px] w-[918px] h-[1px] border-t border-gray-300 opacity-100"></div>
 
-                                <div className="relative w-full flex items-center">
-                                    {/* Centered Text */}
-                                    <h1 className="w-full text-center text-[16px] font-poppins font-semibold leading-[24px] text-global-1 mt-[18px]">
-                                        Qualifications
-                                    </h1>
-
-                                    {/* Right Side Icon */}
-                                    <img
-                                        src="/Editgrey.png"
-                                        alt="edit"
-                                        className="cursor-pointer ml-auto"
-                                    />
-                                </div>
 
                                 {/* Qualifications */}
-                                {/* <span className="text-[16px] font-poppins font-semibold leading-[24px] text-global-1 mt-[18px]">
+                                <span className="text-[16px] font-poppins font-semibold leading-[24px] text-global-1 mt-[18px]">
                                     Qualifications
-                                </span> */}
+                                </span>
+
+                                <div className="ml-auto">
+                                    <img src="/Editgrey.svg" alt="edit" className='absolute top-125 right-5 w-[18px] h-[18px] cursor-pointer' />
+                                </div>
+
                                 <div className="flex flex-col gap-[6px] justify-start items-center w-[38%] mt-[10px]">
-                                    <span className="font-poppins text-sm text-gray-700 text-[14px] font-normal leading-[21px] text-global-5">
+                                    <span className="font-poppins  text-[#757575] text-[14px] font-normal leading-[21px] text-global-5">
                                         Baccalaureate or equivalent experience
                                     </span>
                                     <div className="flex flex-col gap-[6px] justify-start items-center w-full">
-                                        <span className="font-poppins font-normal text-sm text-gray-700 text-[14px] leading-[21px] text-global-5">
+                                        <span className="font-poppins font-normal  text-[#757575] text-[14px] leading-[21px] text-global-5">
                                             Proven experience as a waiter for 2 or more years
                                         </span>
-                                        <span className="font-poppins font-normal text-sm text-gray-700 text-[14px] leading-[21px] text-global-5">
+                                        <span className="font-poppins font-normal  text-[#757575] text-[14px] leading-[21px] text-global-5">
                                             Strong communication and interpersonal skills
                                         </span>
-                                        <span className="font-poppins font-normal text-sm text-gray-700 text-[14px] leading-[21px] text-global-5">
+                                        <span className="font-poppins font-normal  text-[#757575] text-[14px] leading-[21px] text-global-5">
                                             Fluency in French, English and Italian
                                         </span>
                                     </div>
                                 </div>
                                 <br />
                                 {/* Application Section */}
-                                <div className=" bg-background flex items-center justify-center p-4">
+                                <div className="bg-background flex items-center justify-center p-4">
                                     <div className="relative w-[918px] h[259px] rounded-[35px] bg-[linear-gradient(107.8deg,#F2FEFE_0%,#32D3D5_400%,#29FFC6_100%)] overflow-hidden">
-
-                                        <div className="absolute left-[-10px] color-[#42C1F8] w-[159px] h-[75px]">
+                                        <div className="absolute left-0 top-0 ">
                                             <img
-                                                src="/Vector (4).png"
+                                                src="/infinityleft.svg"
                                                 alt="Infinity symbol"
-                                                className="w-full h-full object-contain"
+                                                className="w-full h-[95px] object-contain"
                                             />
                                         </div>
 
                                         {/* Bottom-right infinity symbol */}
-                                        <div className="absolute left-[781.57px] bottom-0 right-0 color-[#42C1F8] w-[149px] h-[75px] opacity-40">
+                                        <div className="absolute bottom-0 right-0 opacity-40">
                                             <img
-                                                src="/Vector (5).png"
+                                                src="/infinityright.svg"
                                                 alt="Infinity symbol"
-                                                className="w-full h-full object-contain"
+                                                className="w-full  h-[75px] object-contain"
                                             />
                                         </div>
                                         <div
                                             className="flex justify-center items-center w-full bg-cover bg-center bg-no-repeat px-9 py-8">
-                                            <div className="flex flex-col gap-6 justify-start items-center  mb-2">
-                                                <span className="font-poppins font-semibold text-base leading-6 text-center text-[#000000]">
+                                            <div className="flex flex-col gap-6 items-center mb-2">
+                                                <span className="font-poppins font-semibold text-[16px] leading-6 text-center text-[#000000]">
                                                     <span>Define </span>
                                                     <span className="text-[#29abe2]">honestly</span>
                                                     <span> how many relevant skills you have for this job & apply !</span>
                                                 </span>
 
                                                 {/* Skill Level Slider */}
-                                                <div className="relative w-[464px] h-[15px] flex justify-center items-center rounded-[24px]" style={{ backgroundColor: '#ffffff' }}>
-                                                    <div className="relative w-[528px] h-[24px] opacity-100  flex items-center">
-                                                        {/* Left Label - "FEW" */}
-                                                        <span className="font-poppins font-semibold text-[14px] leading-[24px] tracking-normal text-center uppercase h[24px] w-[30px] absolute left-0 text-sm text-[#29abe2] transform -translate-x-2/2">FEW</span>
-                                                        <div className="w-[463px] h-[22px]  rounded-[999px] border-4 border-[#FFFFFF]">
-                                                            <input
-                                                                type="range"
-                                                                min="0"
-                                                                max="100"
-                                                                value={skillLevel}
-                                                                onChange={handleSkillLevelChange}
-                                                                className="w-full h-[14px] appearance-none  transition-all duration-200 rounded-full  relative -top-1"
-                                                                style={{
-                                                                    background: `linear-gradient(to right, #29abe2 0%, #29abe2 ${skillLevel}%, #e5e5e5 ${skillLevel}%, #e5e5e5 100%)`,
-                                                                }}
-                                                            />
+                                                <div className='flex gap-2'>
+                                                    <span className="text-[14px] font-semibold text-[#29abe2]">FEW</span>
+                                                    <div className="relative w-[464px] h-[15px] flex justify-center items-center rounded-[24px]" style={{ backgroundColor: '#ffffff' }}>
+                                                        <div className="relative w-[528px] h-[24px] opacity-100  flex items-center">
+                                                            {/* Left Label - "FEW" */}
+                                                            {" "}
+                                                            <div className="w-[463px] h-[22px] rounded-[999px] border-5 border-[#FFFFFF]">
+                                                                <input
+                                                                    type="range"
+                                                                    min="0"
+                                                                    max="100"
+                                                                    value={skillLevel}
+                                                                    onChange={handleSkillLevelChange}
+                                                                    className="custom-range w-full cursor-pointer h-[14px] appearance-none transition-all duration-200 rounded-[999px] relative -top-1"
+                                                                    style={{
+                                                                        background: `linear-gradient(
+                                                                        to right,
+                                                                        #29ABE2 0%,
+                                                                        #29ABE2 ${skillLevel}%,
+                                                                        rgba(174, 174, 174, 0.39) ${skillLevel}%,
+                                                                        rgba(248, 248, 248, 0.6) 100%
+                                                                    )`,
+                                                                    }}
+                                                                />
+                                                            </div>
+                                                            {/* Right Label - "ALL" */}
                                                         </div>
-                                                        {/* Right Label - "ALL" */}
-                                                        <span className="font-poppins font-semibold text-[14px] leading-[24px] tracking-normal text-center uppercase absolute right-0 text-[#29abe2] transform translate-x-2/2">ALL</span>
                                                     </div>
+                                                    <span className="text-[14px] font-semibold text-[#29abe2]">ALL</span>
                                                 </div>
 
                                                 {/* Checkboxes */}
                                                 <div className="flex justify-between items-center w-full ">
-                                                    <div className="flex justify-start items-start w-full">
-                                                        <div
-                                                            className="ml-10 w-4 h-4 border border-gray-500 rounded cursor-pointer"
-                                                            onClick={() => setAttachCV(!attachCV)}
-                                                        >
-                                                            {attachCV && (
-                                                                <div className="w-full h-full rounded" style={{ backgroundColor: '#29abe2' }}></div>
-                                                            )}
-                                                        </div>
-                                                        <span className="text-sm font-normal leading-5 self-center ml-2" style={{ color: '#757575' }}>
+                                                    <div className="flex justify-start items-center w-full">
+                                                        <input
+                                                            type="checkbox"
+                                                            className="ml-15 appearance-none cursor-pointer w-5 h-5 border border-gray-400 rounded-md checked:bg-transparent checked:before:content-['✔'] checked:before:text-gray-500 checked:before:flex checked:before:items-center checked:before:justify-center"
+                                                        />
+                                                        <span className="text-[14px] font-normal leading-5 self-center ml-2" style={{ color: '#757575' }}>
                                                             Attach my CV
                                                         </span>
 
                                                     </div>
 
-                                                    <div className="flex justify-end items-start w-full">
-                                                        <div
-                                                            className="w-4 h-4 border border-gray-500 rounded cursor-pointer"
-                                                            onClick={() => setNeedVisa(!needVisa)}
-                                                        >
-                                                            {needVisa && (
-                                                                <div className="w-full h-full rounded" style={{ backgroundColor: '#29abe2' }}></div>
-                                                            )}
-                                                        </div>
-                                                        <span className="text-sm font-normal leading-5 self-center ml-2" style={{ color: '#757575' }}>
+                                                    <div className="flex justify-end items-center w-full">
+                                                        <input
+                                                            type="checkbox"
+                                                            className="appearance-none w-5 h-5 cursor-pointer border border-gray-400 rounded-md checked:bg-transparent checked:before:content-['✔'] checked:before:text-gray-500 checked:before:flex checked:before:items-center checked:before:justify-center"
+                                                        />
+                                                        <span className="text-[14px] font-normal leading-5 self-center ml-2" style={{ color: '#757575' }}>
                                                             I need a visa to work in this country
                                                         </span>
                                                     </div>
                                                 </div>
 
                                                 {/* Apply Button */}
-                                                <InlineButton
-                                                    variant="primary"
-                                                    size="large"
-                                                    leftIcon="/Frame.png"
-                                                    onClick={handleApply}
-                                                    className="rounded-lg px-5 py-3 pl-10"
-                                                >
-                                                    Apply
-                                                </InlineButton>
+                                                <button className="flex w-[107px] h-[45px] gap-1 px-2 py-2 justify-center items-center bg-[#29ABE2] rounded-[10px]">
+                                                    <img src="/jobcard/apply.svg" className="w-[15px] h-[15px]" />
+                                                    <span className="font-semibold text-[#FFFFFF] text-[14px]">Apply</span>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -734,56 +660,39 @@ export default function jobOfferSeenByUser() {
                                 </div>
 
                                 {/* Notice */}
-                                <div
-                                    className="w-[918px] h-[114px] flex items-center border border-gray-500 rounded-lg px-4 mt-3 relative"
-                                    style={{ backgroundColor: "#f7f7f7f7" }}
-                                >
-                                    {/* Right Side Edit Icon */}
-                                    <img
-                                        src="/Editgrey.png"
-                                        alt="edit"
-                                        className="cursor-pointer absolute top-4 right-4"
-                                    />
-
-                                    {/* Notice Text */}
-                                    <div className="w-full flex justify-center">
-                                        <div className="w-[638px] h-[48px] flex items-center justify-center">
-                                            <p className="font-poppins font-normal text-sm leading-6 tracking-normal text-center text-[#757575]">
-                                                <span>If you do not get an answer within </span>
-                                                <span className="bg-white border border-gray-300 rounded px-1.5 py-0.5 font-semibold">
-                                                    2 weeks
-                                                </span>
-                                                <span>
-                                                    , consider the job offer closed at the moment. We look forward to
-                                                    hearing from you!
-                                                </span>
-                                            </p>
-                                        </div>
+                                <div className="w-[918px] h-[114px] flex justify-start items-center border border-[#757575] rounded-[10px] px-4 mt-3 relative" style={{ backgroundColor: '#f7f7f7f7' }}>
+                                    <div className="ml-auto">
+                                        <img src="/Editgrey.svg" alt="edit" className='absolute top-5 right-5 w-[18px] h-[18px] cursor-pointer' />
                                     </div>
-
+                                    <img
+                                        src="/Frame 1618872956.png"
+                                        alt="Notice Icon"
+                                        className="w-1/10 self-end mt-4"
+                                    />
+                                    <span className="font-poppins font-normal text-[14px] leading-6 tracking-normal text-center w-full ml-11 text-[#757575]">
+                                        <span>If you do not get an answer within </span>
+                                        <span className="text-[#757575] font-semibold border border-[#757575] rounded-md bg-white px-2 py-1">
+                                            2 weeks
+                                        </span>
+                                        {" "}
+                                        <span>
+                                            , consider the job offer closed at the moment.<br /> We look forward to hearing from you!
+                                        </span>
+                                    </span>
                                 </div>
-
                             </div>
                         </div>
 
                         {/* About Us Section */}
-                        <div className="bg-white mx-auto w-[982px] flex flex-col justify-start items-center bg-global-12 rounded-[24px] shadow-[0px_4px_6px_#75757519] px-[20px] py-[20px]">
-                            <div className="relative w-full flex items-center">
-                                {/* Centered Text */}
-                                <h1 className="absolute left-1/2 transform -translate-x-1/2 text-[16px] text-[#000000] font-semibold">
-                                    About Us
-                                </h1>
-
-                                {/* Right Side Icon */}
-                                <img
-                                    src="/Editgrey.png"
-                                    alt="edit"
-                                    className="cursor-pointer ml-auto"
-                                />
-                            </div>
-                            {/* <span className="text-[16px] font-poppins font-semibold leading-[24px] text-global-1">
+                        <div className="bg-white mx-auto w-[982px] flex flex-col justify-start items-center bg-global-12 rounded-[24px] shadow-[0px_4px_6px_#7575751A] px-[20px] py-[20px] relative">
+                            <span className="text-[16px] font-poppins font-semibold leading-[24px] text-global-1 mb-2">
                                 About Us
-                            </span> */}
+                            </span>
+
+                            <div className="ml-auto">
+                                <img src="/Editgrey.svg" alt="edit" className='absolute top-5 right-10 w-[18px] h-[18px] cursor-pointer' />
+                            </div>
+
                             <span className="font-poppins tracking-normal  ml-11 text-[#757575] text-[14px] leading-[24px]">
                                 We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France!
                             </span>
@@ -795,73 +704,61 @@ export default function jobOfferSeenByUser() {
                         </div>
 
                         {/* Workplace Overview */}
-                        <div className="bg-white w-[982px] h-[503px] rounded-[25px] shadow-md p-6 flex flex-col">
-                            <div className="relative flex items-center mb-4">
-                                <h3 className="absolute left-1/2 transform -translate-x-1/2 font-semibold text-[#000000] text-[16px]">
-                                    Workplace Overview
-                                </h3>
-                                <div className="ml-auto">
-                                    <img src="/Editgrey.png" alt="edit" className="cursor-pointer" />
-                                </div>
+                        <div className="bg-white mx-auto w-[982px] h-[421px] flex flex-col justify-start items-center bg-global-12 rounded-[24px] shadow-[0px_4px_6px_#7575751A] px-[20px] py-[20px] relative">
+                            <h3 className="items-center font-semibold text-gray-900 mb-4 text-[16px]">Workplace Overview</h3>
+                            <div className="ml-auto">
+                                <img src="/Editgrey.svg" alt="edit" className='absolute top-5 right-10 w-[18px] h-[18px] cursor-pointer' />
                             </div>
-
-                            {/* Main Image */}
-
-                            <div className="mb-2 flex justify-center">
-                                <div className="w-[918px] h-[314px] flex flex-col items-center justify-center bg-[#E6E6E6] border-2 border-dashed border-gray-400 rounded-[20px] ">
-                                    {selectedImage ? (
-                                        <img
-                                            src={selectedImage}
-                                            alt="Uploaded Preview"
-                                            className="rounded-[20px] w-full h-full object-cover"
+                            <div className="w-[918px] h-[314px] flex flex-col items-center justify-center bg-[#E6E6E6] border-2 border-dashed border-gray-400 rounded-[20px]">
+                                {selectedImage ? (
+                                    <img
+                                        src={selectedImage}
+                                        alt="Uploaded Preview"
+                                        className="rounded-[20px] w-full h-full object-cover"
+                                    />
+                                ) : (
+                                    <>
+                                        <input
+                                            type="file"
+                                            id="file-upload"
+                                            accept="image/*"
+                                            onChange={handleImageUpload}
+                                            className="hidden"
                                         />
-                                    ) : (
-                                        <>
+                                        <label
+                                            htmlFor="file-upload"
+                                            className="px-6 py-2 bg-[#29ABE2] text-[#FFFFFF] rounded-[10px] cursor-pointer transition"
+                                        >
+                                            Upload Workplace Picture
+                                        </label>
+                                        <div className="flex items-center mt-4">
                                             <input
-                                                type="file"
-                                                id="file-upload"
-                                                accept="image/*"
-                                                onChange={handleImageUpload}
-                                                className="hidden"
+                                                type="checkbox"
+                                                id="repost"
+                                                className="mr-2 text-[#000000] bg-[#E6E6E6] border-2 border-black"
                                             />
                                             <label
-                                                htmlFor="file-upload"
-                                                className="flex items-center justify-center w-[220px] h-[53px] bg-[#29ABE2] text-[#FFFFFF] rounded-[10px] cursor-pointer transition"
+                                                htmlFor="repost"
+                                                className="text-[14px] text-[#000000] font-medium cursor-pointer"
                                             >
-                                                Upload Workplace Picture
+                                                Make my content eligible to be reposted on Everywhere Jobs’ Socials & Communications
                                             </label>
-                                            <div className="flex items-center mt-4">
-                                                <input
-                                                    type="checkbox"
-                                                    id="repost"
-                                                    className="mr-2 text-[#000000] bg-[#E6E6E6]"
-                                                />
-                                                <label
-                                                    htmlFor="repost"
-                                                    className="text-[14px] text-[#000000] font-medium cursor-pointer"
-                                                >
-                                                    Make my content eligible to be reposted on Everywhere Jobs’ Socials
-                                                    & Communications
-                                                </label>
-                                            </div>
-                                        </>
-                                    )}
-                                </div>
+                                        </div>
+                                    </>
+                                )}
                             </div>
 
                             <div className="bg-[#EAF7FC] h-[66px] w-[918px] rounded-[999px] mt-5 pt-[10px] pb-[10px] pl-[80px] pr-[80px] flex justify-center items-center">
-
-                                <span className='text-[#29ABE2] text-[14px] italic text-center font-normal'>You can request content removal for reposted content here <br />
+                                <span className='font-popins italic text-[#29ABE2] text-[14px] text-center font-medium'>You can request content removal for reposted content here <br />
                                     (only if you or your company are recognizable)
                                 </span>
                             </div>
-
                         </div>
 
                         {/* Similar jobs*/}
-                        <div className="bg-white rounded-[25px] shadow-md p-6 flex flex-col items-center max-w-[982px] w-[982px] h-[329px] relative">
+                        <div className="bg-white rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col items-center max-w-[982px] w-[982px] h-[329px] relative">
                             <h1 className="text-[16px] text-[#000000] font-semibold mb-4">
-                                Similar jobs
+                                Similar Jobs
                             </h1>
 
                             {/* Left Scroll */}
@@ -892,7 +789,7 @@ export default function jobOfferSeenByUser() {
                                 {similarprofiles.map((profile, index) => (
                                     <div
                                         key={index}
-                                        className="flex flex-col min-w-[265px] min-h-[210px] justify-start items-center p-0 border border-[#CECECE] rounded-[20px] bg-white shadow-sm flex-shrink-0 text-center"
+                                        className="flex flex-col w-[265px] h-[210px] justify-start items-center p-0 border border-[#CECECE] rounded-[20px] bg-white shadow-[4px_4px_11px_0px_#75757530] flex-shrink-0 text-center"
                                     >
                                         {/* Top gradient section */}
                                         {/* Top gradient section */}
@@ -905,7 +802,7 @@ export default function jobOfferSeenByUser() {
                                             <div className="absolute top-[34px]">
                                                 <div className="relative">
                                                     <img
-                                                        src={profile.img}
+                                                        src={'/silimit-job.svg'}
                                                         className="rounded-full w-[65px] h-[65px] object-cover "
                                                         alt={profile.name}
                                                     />
@@ -920,111 +817,75 @@ export default function jobOfferSeenByUser() {
                                             <span className="text-[#757575] text-[12px]">{profile.text}</span>
                                             {/* Stars */}
                                             <div className="flex justify-center gap-[8.4px] mt-[10px] mb-[10px]">
-                                                <button className="w-[229px] h-[38px] flex items-center justify-center gap-2 bg-[#00C1F7] text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-[#00A8E0] transition">
-                                                    <img src="/frame.png" alt="Plane Icon" className="w-4 h-4" />
-                                                    Apply
-                                                    <img src="/arrow-left.png" alt="Arrow" className="w-[7px] h-[12px] ml-1" /> {/* Arrow image */}
+                                                <button className="w-[229px] h-[38px] flex items-center justify-center gap-2 bg-[#29ABE2] text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-[#00A8E0] transition">
+                                                    <img src="/jobcard/apply.svg" alt="Plane Icon" className="w-4 h-4" />
+                                                    <span className='text-[14px] font-semibold'> Apply</span>
+                                                    <img src="/rightaero-white.svg" alt="Arrow" className="w-[7px] h-[12px] ml-1" /> {/* Arrow image */}
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
                                 ))}
                             </div>
-
                         </div>
 
-
-
-
+                        <div className="bg-[#4BDDB61A] h-[41px] w-[982px] rounded-[999px] pt-[10px] pb-[10px] pl-[80px] pr-[80px] flex justify-center items-center">
+                            <span className="text-[#4BDDB6] text-[14px] font-medium text-center">
+                                You are responsible for the information you communicate & provide on your pages : complete and verify them well !
+                            </span>
+                        </div>
                     </div>
 
                     {/* Right Sidebar */}
                     <div className="lg:col-span-1">
-                        <div className="w-[345px] h-[691px] bg-white rounded-[25px] shadow-sm p-6 overflow-hidden">
-                            {/* Menu */}
-                            <div className="mb-6">
-                                <h3 className="font-poppins font-semibold text-[16px] leading-[20px] text-gray-900 mb-3">
-                                    Menu
-                                </h3>
-                                <div className="space-y-2 text-sm">
-                                    <a
-                                        href="#"
-                                        className="flex items-center w-[137px] h-[20px] gap-2 text-gray-600 hover:text-blue-600"
-                                    >
-                                        <img
-                                            src="/change-mode.png"
-                                            alt="Change mode"
-                                            className="w-4 h-4"
-                                        />
-                                        <span className="text-sm leading-none">Change mode</span>
-                                    </a>
+                        <div className="w-[345px] h-[691px] bg-white rounded-[25px] box-shadow: [-4px_4px_6px_0px_#7575751A] p-6 overflow-hidden">
+                            <div className="space-y-4 text-sm">
+                                <h3 className="text-[#000000] font-semibold text-[16px]">Menu</h3>
 
-                                    <a
-                                        href="#"
-                                        className="flex items-center w-[113px] h-[20px] gap-2 text-gray-600 hover:text-blue-600"
-                                    >
-                                        <img
-                                            src="/dashboard.png"
-                                            alt="Dashboard"
-                                            className="w-4 h-4"
-                                        />
-                                        <span className="text-sm leading-none">Dashboard</span>
-                                    </a>
-
-                                    <a
-                                        href="#"
-                                        className="flex items-center w-[109px] h-[24px] gap-2 text-gray-600 hover:text-blue-600"
-                                    >
-                                        <img
-                                            src="/messages.png"
-                                            alt="Messages"
-                                            className="w-4 h-4"
-                                        />
-                                        <span className="text-sm leading-none">Messages</span>
-                                    </a>
-
-                                    <a
-                                        href="#"
-                                        className="flex items-center w-[65px] h-[24px] gap-2 text-gray-600 hover:text-blue-600"
-                                    >
-                                        <img
-                                            src="/faq.png"
-                                            alt="FAQ"
-                                            className="w4 h-4"
-                                        />
-                                        <span className="text-sm leading-none">FAQ</span>
-                                    </a>
-
+                                <div className="flex items-center gap-3 cursor-pointer">
+                                    <img src="/change-mode.svg" alt="change mode" />
+                                    <span className="text-[#757575] text-[14px] font-medium">Change mode</span>
                                 </div>
-                                <div className="w-[281px] border-t border border-[#F5F5F5] my-3"></div>
 
+                                <div className="flex items-center gap-3 cursor-pointer">
+                                    <img src="/dashboard.svg" alt="dashboard" />
+                                    <span className="text-[#757575] text-[14px]  font-medium">Dashboard</span>
+                                </div>
+
+                                <div className="flex items-center gap-3 cursor-pointer">
+                                    <img src="/messages.svg" alt="messages" />
+                                    <span className="text-[#757575] text-[14px] font-medium">Messages</span>
+                                </div>
+
+                                <div className="flex items-center gap-3 cursor-pointer">
+                                    <img src="/faq.svg" alt="faq" />
+                                    <span className="text-[#757575] text-[14px] font-medium">FAQ</span>
+                                </div>
                             </div>
+                            <div className="border-t border-[#F5F5F5] my-6"></div>
 
-                            {/* Similar Companies */}
                             <div className="mb-6">
-                                <h3 className="font-semibold text-gray-900 mb-3">Similar Companies</h3>
+                                <h3 className="font-semibold text[#000000] text-[16px] mb-3">Similar Companies</h3>
                                 <div className="space-y-3">
                                     {[...Array(3)].map((_, i) => (
                                         <div
                                             key={i}
                                             className="flex items-center w-[177px] h-[50px]"  // match figma size
                                         >
-                                            {/* Company Icon */}
                                             <div className="w-[50px] h-[50px] flex items-center justify-center">
                                                 <img
-                                                    src="/Group 1000009809.png"
+                                                    src="/smcompanyicon.svg"
                                                     alt="Company Icon"
-                                                    className="w-[44px] h-[44px] rounded-full"
+                                                    className="w-[50px] h-[50px]"
                                                 />
                                             </div>
 
 
-                                            {/* Company Text */}
                                             <div>
-                                                <p className="font-poppins font-semibold text-[14px] leading-[16px]">
+                                                <p className="font-poppins text-[#333333] font-semibold text-[14px] leading-[16px]">
                                                     Everywhere Jobs
                                                 </p>
-                                                <p className="font-poppins font-normal text-[12px] leading-[20px] text-gray-600">
+                                                <p className="font-poppins font-normal text-[12px] leading-[20px] text-[#757575]">
                                                     Business & Tech
                                                 </p>
 
@@ -1034,37 +895,29 @@ export default function jobOfferSeenByUser() {
                                     ))}
                                 </div>
                             </div>
-                            <div className="w-[281px] border-t border border-[#F5F5F5] my-3"></div>
-                            <div className="text-[#CECECE] font-poppins font-semibold text-[16px] leading-[20px] px-3 py-1 rounded">
-                                Ad
-                            </div>
+                            <div className="border-t border-[#F5F5F5] my-6"></div>
 
+                            <h3 className="text-[#CECECE] font-semibold text-[16px] mb-2">Ad</h3>
 
-                            {/* Office Image */}
                             <div className="relative rounded-lg h-33 w-full overflow-hidden">
-                                {/* Background Image */}
-                                <div className="relative w-[281px] h-[134px] rounded-lg overflow-hidden">
+                                <div className="relative overflow-hidden">
                                     <img
-                                        src="Frame 1618873061.png"
+                                        src="/admenuimg.svg"
                                         alt="filter"
-                                        className="w-full h-full object-cover"
+                                        className="w-[281px] h-[134px] rounded-[20px] object-cover"
                                     />
                                 </div>
 
 
-                                {/* Overlay Texts */}
-                                <div className="absolute inset-0 flex justify-between items-start px-4 py-2">
-                                    {/* Left Text */}
-                                    <span className="font-poppins font-semibold text-[12px] leading-[15.7px] text-white px-3 py-1 rounded-md">
-                                        Flat in Paris
-                                    </span>
-
-
-                                    {/* Right Text */}
-                                    <span className="font-poppins font-medium text-[12px] leading-[15.99px] text-white border border-white px-3 py-1 rounded-md text-center">
-                                        ABC Agency
-                                    </span>
-
+                                <div className="absolute top-2 left-0 right-4 px-4">
+                                    <div className="flex justify-between items-center">
+                                        <span className="font-poppins font-semibold text-[12px] leading-[15.7px] text-white">
+                                            Flat in Paris
+                                        </span>
+                                        <span className="font-poppins font-medium text-[12px] leading-[15.99px] text-white border border-white px-3 py-1 rounded-md text-center">
+                                            ABC Agency
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
 

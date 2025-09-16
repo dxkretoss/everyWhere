@@ -814,7 +814,6 @@ export default function Profile_seen_by_worker_himself() {
 
 
                             <div className="bg-[#EAF7FC] h-[66px] w-[864px] rounded-[999px] mt-5 pt-[10px] pb-[10px] pl-[80px] pr-[80px] flex justify-center items-center">
-
                                 <span className='font-popins italic text-[#29ABE2] text-[14px] text-center font-medium'>You can request content removal for reposted content here <br />
                                     (only if you or your company are recognizable)
                                 </span>
