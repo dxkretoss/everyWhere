@@ -118,3 +118,24 @@ body::-webkit-scrollbar-track {
 .leaflet-control {
   z-index: 500 !important;
 }
+
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #4ac4f3, #0d9be5);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.custom-range::-moz-range-thumb {
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #4ac4f3, #0d9be5);
+  border: 2px solid #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
