@@ -10,7 +10,7 @@ export default function Layout({ children }) {
             </header>
 
             <main className="flex-1">
-                <div >
+                <div>
                     {children}
                 </div>
             </main>
