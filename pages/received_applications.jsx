@@ -42,7 +42,7 @@ export default function received_applications() {
                 <div className="relative z-10 flex flex-col items-center mt-[21px] gap-[15px] h-full text-white">
                     <div className='flex gap-2 items-center'>
                         <img src='/rec-bedge.svg' className='w-[27px] h-[27px]' />
-                        <span className='text-[14px] text-[#757575]'>Check your monthly analytics</span>
+                        <span className='text-[14px] font-medium text-[#757575]'>Check your monthly analytics</span>
                     </div>
 
                     <div className='flex gap-[15px]'>
@@ -186,7 +186,7 @@ export default function received_applications() {
                                     </div>
 
                                     {/* Published / Starting */}
-                                    <div className="flex justify-center items-center gap-6 mt-4">
+                                    <div className="flex justify-center items-center gap-6 mt-2">
                                         <div className="flex items-center gap-1.5">
                                             <span className="text-black font-medium text-[12px]">published</span>
                                             <span className="px-2 py-1 bg-[#F5F5F5] rounded-[999px] text-[#A8A8A8] font-medium text-[12px] mt-1">02/09/25</span>
@@ -225,7 +225,7 @@ export default function received_applications() {
                                     </div>
 
                                     {/* Stats */}
-                                    <div className="flex justify-center gap-6 mt-1">
+                                    <div className="flex justify-center gap-6 mt-2">
                                         <p className='flex gap-1'>
                                             <span className="text-[#29ABE2] text-[16px] font-semibold">657</span>
                                             <span className="text-[#757575] text-[14px">visitors</span>
