@@ -12,7 +12,7 @@ export default function Mainlayout({ children }) {
             <main className="flex-1">
                 <div className="absolute  left-0 w-full h-[231px] -z-10 overflow-hidden">
                     <img src="/hero/heroFrame.png" alt="Hero Background"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full"
                     />
                 </div>
                 <div className="relative z-10 py-5 w-full max-w-[1440px] px-4 mx-auto">

@@ -28,6 +28,7 @@ export default function received_applications() {
 
     return (
         <Layout>
+
             <div className='h-[57px] flex items-center justify-center'>
                 <h1 className='text-[24px] font-semibold text-[#000000]'>Received Applications</h1>
             </div>
@@ -2283,11 +2284,7 @@ export default function received_applications() {
                         </div>
                     </div>
                 ) : null}
-
-
-
             </div>
-
         </Layout>
     )
 }
