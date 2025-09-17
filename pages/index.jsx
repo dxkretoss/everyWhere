@@ -84,19 +84,19 @@ export default function Index() {
             onClick={() => setShowMobileFilters(true)}
             className="w-1/2 flex items-center justify-center gap-2 border border-[#29ABE2] text-[#29ABE2] px-4 py-2 rounded-[10px]"
           >
-            <img src="/Filter.svg" alt="filter" className="w-4 h-4" />
+            <img src="/Filter.svg" alt="filter" className="w-[20px] h-[20px]" />
             <span className="font-medium">Filters</span>
           </button>
           <button className="font-semibold w-1/2 flex items-center justify-center gap-2 bg-[#29ABE2] text-white px-4 py-2 rounded-[10px] shadow hover:bg-[#1e90c2] transition">
-            <img src="/accomodationsPage/bell.svg" alt="save" className="w-4 h-4" />
+            <img src="/accomodationsPage/bell.svg" alt="save" className="w-[20px] h-[20px]" />
             <span className="text-sm font-medium">SAVE SEARCH</span>
           </button>
         </div>
 
         {/* Desktop view */}
-        <div className="hidden sm:flex items-center gap-2 flex-shrink-0">
+        <div className="hidden sm:flex  w-[95px] items-center gap-2 flex-shrink-0">
           <img src="/Filter.svg" alt="filter" className="w-[20px] h-[20px]" />
-          <span className="text-[#29ABE2]  text-sm leading-none tracking-normal text-center">
+          <span className="text-[#29ABE2]  text-[14px] leading-none tracking-normal text-center">
             All Filters
           </span>
         </div>
@@ -125,7 +125,7 @@ export default function Index() {
               text={btn.text}
               rightImg={idx < 2 ? "/blueAero.svg" : "/arrow.svg"}
               minWidth={btn.minWidth}
-              className={`h-[38px] font-medium whitespace-nowrap border 
+              className={`h-[38px] font-medium whitespace-nowrap border text-[14px]
             ${idx < 2
                   ? "border-[rgba(97,193,234,1)] text-[rgba(41,171,226,1)]"
                   : "border-[#EBEBEB] text-[#757575]"}`}
@@ -146,7 +146,7 @@ export default function Index() {
 
         {/* Save Search (desktop only) */}
         <div className="hidden sm:flex flex-shrink-0">
-          <button className="flex items-center gap-2 bg-[#29ABE2] text-white px-4 py-2 rounded-[10px] shadow hover:bg-[#1e90c2] transition whitespace-nowrap">
+          <button className="flex w-[163px] h-[38px] items-center gap-2 bg-[#29ABE2] text-white px-4 py-2 rounded-[10px] shadow hover:bg-[#1e90c2] transition whitespace-nowrap">
             <img src="/accomodationsPage/bell.svg" alt="save" className="w-4 h-4" />
             <span className="text-sm font-medium">SAVE SEARCH</span>
           </button>

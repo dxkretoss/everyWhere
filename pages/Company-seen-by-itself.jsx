@@ -298,7 +298,7 @@ export default function Profileseenbyvisitors() {
                     Post a Job Offer !
                 </button>
             </div>
-            <div className="min-h-screen mt-10">
+            <div className="min-h-screen">
                 {/* Main Content Container */}
                 <div className="flex flex-col lg:flex-row gap-10 px-4 pt-10 justify-center">
 

@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react'
-// import Layout from '@/components/Layout/Layout/'
 import Mainlayout from '@/components/MainLayout/Mainlayout';
 import ToggleSwitch from '@/components/UI/ToggleSwitch';
 import { MapPin, Clock, Calendar, Star, Globe, Users, Coffee, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -147,7 +146,6 @@ export default function jobOfferSeenByUser() {
             setSelectedImage(URL.createObjectURL(file));
         }
     };
-
 
     return (
         <Mainlayout>

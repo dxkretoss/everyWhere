@@ -10,7 +10,7 @@ export default function Layout({ children }) {
             </header>
 
             <main className="flex-1">
-                <div className="py-10 w-[1440px] m-auto">
+                <div >
                     {children}
                 </div>
             </main>

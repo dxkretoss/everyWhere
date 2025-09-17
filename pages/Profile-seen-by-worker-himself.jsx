@@ -210,7 +210,7 @@ export default function Profile_seen_by_worker_himself() {
 
             <div className="min-h-screen">
                 {/* Main Content Container */}
-                <div className="flex gap-10 px-4 pt-10 justify-center">
+                <div className="flex gap-10 px-4 pt-8 justify-center">
                     <div className="lg:col-span-2 space-y-5 w-full lg:w-[70%]">
                         <div className="bg-white h-[202px] w-[982px] rounded-[25px] shadow-md p-6 flex flex-col relative">
                             <div className="flex justify-between items-center">
