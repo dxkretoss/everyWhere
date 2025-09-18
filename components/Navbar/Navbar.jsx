@@ -38,16 +38,16 @@ export default function Navbar() {
                     <img src="/nav/mail.svg" alt="Mail" className="hidden xl:flex cursor-pointer" />
                     <img src="/nav/bell.svg" alt="Notifications" className="cursor-pointer" />
                     <div class="hidden xl:flex w-[45px] h-[45px] opacity-100 rounded-[10px] border gap-[10px] border-[#EBEBEB] px-[12px] py-[10px]  items-center justify-center">
-                        <img src="/nav/circle.svg" alt="Refresh" class="cursor-pointer" />
+                        <img src="/nav/circle.svg" alt="Refresh" class="cursor-pointer w-[22px] h-[19px]" />
                     </div>
 
 
                     {/* User Avatar + Chevron */}
                     <div className="flex items-center gap-1 cursor-pointer">
                         <img
-                            src="https://randomuser.me/api/portraits/men/15.jpg"
+                            src="/nav-img.svg"
                             alt="User"
-                            className="w-8 h-8 rounded-full object-cover"
+                            className="w-[32px] h-[32px]"
                         />
                         <img
                             src="/arrow.svg"

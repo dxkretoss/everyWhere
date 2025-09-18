@@ -77,7 +77,7 @@ export default function Index() {
       </div>
 
       {/* Sticky Filter Bar */}
-      <div className="shadow-[0px_4px_6px_0px_rgba(0,0,0,0.11)] sticky top-[64px] z-40 bg-white px-5 py-2 flex items-center gap-6 justify-between">
+      <div className="shadow-[0px_4px_6px_0px_#0000001C]  sticky top-[64px] z-40 bg-white px-5 py-2 flex items-center gap-6 justify-between">
         {/* Mobile view (Filter + Save Search side by side) */}
         <div className="flex sm:hidden gap-2 w-full">
           <button

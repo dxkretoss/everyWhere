@@ -184,7 +184,7 @@ export default function jobOfferSeenByUser() {
                     <div className="lg:col-span-2 space-y-5">
 
                         {/* Job Header Card */}
-                        <div className="bg-white rounded-[25px] p-6 shadow-[0px_4px_6px_0px_#7575751A] w-[982px] h-[459px] relative">
+                        <div className="bg-white rounded-[25px] p-6 shadow-[0px_4px_6px_0px_#7575751A]  w-[982px] h-[459px] relative">
                             <span className="absolute -top-[25px] left-1/2 transform -translate-x-1/2 
                                             w-[132px] h-[48px] 
                                             rounded-full 
@@ -302,7 +302,6 @@ export default function jobOfferSeenByUser() {
                                 </div>
                             </div>
                         </div>
-
 
                         {/* Skills and Languages Section */}
                         <div className="bg-white mx-auto w-[982px] h-[199px] shadow-[0px_4px_6px_0px_#7575751A] rounded-[25px]">
@@ -638,15 +637,15 @@ export default function jobOfferSeenByUser() {
                         </div>
 
                         {/* About Us Section */}
-                        <div className="bg-white mx-auto w-[982px] flex flex-col justify-start items-center bg-global-12 rounded-[24px] shadow-[0px_4px_6px_#7575751A] px-[20px] py-[20px]">
+                        <div className="bg-white mx-auto w-[982px] h-[211px] flex flex-col justify-start items-center bg-global-12 rounded-[24px] shadow-[0px_4px_6px_#7575751A] px-[20px] py-[20px]">
                             <span className="text-[16px] font-poppins font-semibold leading-[24px] text-global-1">
                                 About Us
                             </span>
-                            <span className="font-poppins tracking-normal  ml-11 text-[#757575] text-[14px] leading-[24px]">
+                            <span className="font-poppins tracking-normal  ml-11 text-[#757575] text-[14px] leading-[24px] mt-[13px] ">
                                 We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France!
                             </span>
 
-                            <span className="font-poppins font-normal text-[14px] text-[#757575] leading-[21px] text-global-5 mb-2">
+                            <span className="font-poppins font-normal text-[14px] mt-[9px] text-[#757575] leading-[21px] text-global-5 mb-2">
                                 <span className="font-semibold">We are introvert friendly: </span>
                                 <span className="font-semibold italic">You do you, we will not bother you.</span>
                             </span>

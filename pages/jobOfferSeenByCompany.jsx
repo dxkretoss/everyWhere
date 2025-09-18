@@ -682,7 +682,7 @@ export default function jobOfferSeenByUser() {
                         </div>
 
                         {/* About Us Section */}
-                        <div className="bg-white mx-auto w-[982px] flex flex-col justify-start items-center bg-global-12 rounded-[24px] shadow-[0px_4px_6px_#7575751A] px-[20px] py-[20px] relative">
+                        <div className="bg-white mx-auto w-[982px] h-[211px] flex flex-col justify-start items-center bg-global-12 rounded-[24px] shadow-[0px_4px_6px_#7575751A] px-[20px] py-[20px] relative">
                             <span className="text-[16px] font-poppins font-semibold leading-[24px] text-global-1 mb-2">
                                 About Us
                             </span>
@@ -691,11 +691,11 @@ export default function jobOfferSeenByUser() {
                                 <img src="/Editgrey.svg" alt="edit" className='absolute top-5 right-10 w-[18px] h-[18px] cursor-pointer' />
                             </div>
 
-                            <span className="font-poppins tracking-normal  ml-11 text-[#757575] text-[14px] leading-[24px]">
+                            <span className="font-poppins tracking-normal  ml-11 text-[#757575] text-[14px] leading-[24px]  mt-[13px]">
                                 We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France! We are an innovative software company created in 2025 in the South of France!
                             </span>
 
-                            <span className="font-poppins font-normal text-[14px] text-[#757575] leading-[21px] text-global-5 mb-2">
+                            <span className="font-poppins font-normal text-[14px]  mt-[9px] text-[#757575] leading-[21px] text-global-5 mb-2">
                                 <span className="font-semibold">We are introvert friendly: </span>
                                 <span className="font-semibold italic">You do you, we will not bother you.</span>
                             </span>

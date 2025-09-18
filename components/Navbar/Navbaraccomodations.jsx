@@ -41,9 +41,9 @@ export default function Navbaraccomodations() {
                     {/* User Avatar + Chevron */}
                     <div className="flex items-center gap-1 cursor-pointer">
                         <img
-                            src="https://randomuser.me/api/portraits/men/15.jpg"
+                            src="/nav-img.svg"
                             alt="User"
-                            className="w-8 h-8 rounded-full object-cover"
+                            className="w-[32px] h-[32px]"
                         />
                         <img
                             src="/arrow.svg"

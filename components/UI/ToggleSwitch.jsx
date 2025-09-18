@@ -14,17 +14,18 @@ const ToggleSwitch = ({ labelOn = "Available", labelOff = "Unavailable", title }
                 sm:w-[150px] sm:h-[32px]  
                 md:w-[160px] md:h-[36px]   
                 lg:w-[180px] lg:h-[40px]  
-                flex items-center justify-center gap-2 cursor-pointer"
+                flex items-center justify-center gap-2 cursor-pointer
+                "
             onClick={toggle}>
             <span className="text-black text-[14px] font-medium">
                 {isOn ? onText : offText}
             </span>
             <div
-                className={`w-12 h-6 flex items-center rounded-full p-1 transition-colors duration-300 ${isOn ? "bg-[#FFFFFF]" : "bg-black"
+                className={`w-12 h-6 flex items-center rounded-full p-1 shadow-[0px_4px_4px_0px_#00000040] transition-colors duration-300 ${isOn ? "bg-[#FFFFFF]" : "bg-black"
                     }`}
             >
                 <div
-                    className={`w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ${isOn ? "translate-x-6 bg-[#29ABE2]" : "translate-x-0 bg-white"
+                    className={`w-4 h-4 rounded-full transform transition-transform duration-300 ${isOn ? "translate-x-6 bg-[#29ABE2]" : "translate-x-0 bg-white"
                         }`}
                 ></div>
             </div>
