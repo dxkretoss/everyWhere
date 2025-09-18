@@ -59,7 +59,6 @@ export default function FrelancerProfile() {
         },
     ]
 
-
     const similarProfilesRef = useRef(null)
     const [canScrollLeftProfiles, setCanScrollLeftProfiles] = useState(false)
     const [canScrollRightProfiles, setCanScrollRightProfiles] = useState(false)

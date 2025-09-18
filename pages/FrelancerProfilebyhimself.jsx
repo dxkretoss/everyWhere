@@ -1,23 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Mainlayout from '@/components/MainLayout/Mainlayout'
+import ToggleSwitch from '@/components/UI/ToggleSwitch'
 import dynamic from "next/dynamic"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import ToggleSwitch from '@/components/UI/ToggleSwitch';
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
     ssr: false,
 });
-
-const toggleFullscreen = () => {
-    const mapEl = document.querySelector(".custom-map-container"); // className of map container
-    if (!mapEl) return;
-
-    if (!document.fullscreenElement) {
-        mapEl.requestFullscreen();
-    } else {
-        document.exitFullscreen();
-    }
-};
 
 const ValuesAndInterests = [
     {
@@ -48,64 +37,25 @@ const ValuesAndInterests = [
         ]
     },
 ]
-export default function Profile_seen_by_worker_himself() {
-    const scrollRef = useRef(null);
-    const [canScrollLeft, setCanScrollLeft] = useState(false)
-    const [canScrollRight, setCanScrollRight] = useState(false)
 
-    const updateScrollButtons = () => {
-        if (!scrollRef.current) return
-        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current
-        setCanScrollLeft(scrollLeft > 0)
-        setCanScrollRight(scrollLeft + clientWidth < scrollWidth)
-    }
-
-    useEffect(() => {
-        updateScrollButtons()
-        if (scrollRef.current) {
-            scrollRef.current.addEventListener("scroll", updateScrollButtons)
-            return () => scrollRef.current.removeEventListener("scroll", updateScrollButtons)
-        }
-    }, [])
-
-    const scroll = (direction) => {
-        if (!scrollRef.current) return
-        const { scrollLeft, clientWidth } = scrollRef.current
-        const scrollAmount = direction === "left" ? -clientWidth : clientWidth
-        scrollRef.current.scrollTo({
-            left: scrollLeft + scrollAmount,
-            behavior: "smooth",
-        })
-    }
-
-    const galleryRef = useRef(null)
-    const [canScrollLeftGallery, setCanScrollLeftGallery] = useState(false)
-    const [canScrollRightGallery, setCanScrollRightGallery] = useState(false)
-
-    const updateGalleryScrollButtons = () => {
-        if (!galleryRef.current) return
-        const { scrollLeft, scrollWidth, clientWidth } = galleryRef.current
-        setCanScrollLeftGallery(scrollLeft > 0)
-        setCanScrollRightGallery(scrollLeft + clientWidth < scrollWidth)
-    }
-
-    useEffect(() => {
-        updateGalleryScrollButtons()
-        if (galleryRef.current) {
-            galleryRef.current.addEventListener("scroll", updateGalleryScrollButtons)
-            return () => galleryRef.current.removeEventListener("scroll", updateGalleryScrollButtons)
-        }
-    }, [])
-
-    const scrollGallery = (direction) => {
-        if (!galleryRef.current) return
-        const { scrollLeft, clientWidth } = galleryRef.current
-        const scrollAmount = direction === "left" ? -clientWidth : clientWidth
-        galleryRef.current.scrollTo({
-            left: scrollLeft + scrollAmount,
-            behavior: "smooth",
-        })
-    }
+export default function FrelancerProfilebyhimself() {
+    const mygigs = [
+        {
+            mainPrice: "60€",
+            title: "Small Garden Maintenance",
+            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dia",
+        },
+        {
+            mainPrice: "150€",
+            title: "Garden Maintenance",
+            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dia",
+        },
+        {
+            mainPrice: "200€",
+            title: "Large Garden Maintenance",
+            text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dia",
+        },
+    ]
 
     const similarProfilesRef = useRef(null)
     const [canScrollLeftProfiles, setCanScrollLeftProfiles] = useState(false)
@@ -136,20 +86,6 @@ export default function Profile_seen_by_worker_himself() {
         })
     }
 
-
-    const feedbacks = [
-        {
-            name: "John Doe",
-            img: "https://randomuser.me/api/portraits/men/5.jpg",
-            text: "We enjoyed working with this profile! Great experience.",
-        },
-        {
-            name: "John Doe",
-            img: "https://randomuser.me/api/portraits/men/5.jpg",
-            text: "We enjoyed working with this profile! Great experience.",
-        },
-    ]
-
     const similarprofiles
         = [
             {
@@ -174,6 +110,82 @@ export default function Profile_seen_by_worker_himself() {
             },
         ]
 
+    const scrollRef = useRef(null);
+    const [canScrollLeft, setCanScrollLeft] = useState(false)
+    const [canScrollRight, setCanScrollRight] = useState(false)
+
+    const updateScrollButtons = () => {
+        if (!scrollRef.current) return
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current
+        setCanScrollLeft(scrollLeft > 0)
+        setCanScrollRight(scrollLeft + clientWidth < scrollWidth)
+    }
+
+    useEffect(() => {
+        updateScrollButtons()
+        if (scrollRef.current) {
+            scrollRef.current.addEventListener("scroll", updateScrollButtons)
+            return () => scrollRef.current.removeEventListener("scroll", updateScrollButtons)
+        }
+    }, [])
+
+    const scroll = (direction) => {
+        if (!scrollRef.current) return
+        const { scrollLeft, clientWidth } = scrollRef.current
+        const scrollAmount = direction === "left" ? -clientWidth : clientWidth
+        scrollRef.current.scrollTo({
+            left: scrollLeft + scrollAmount,
+            behavior: "smooth",
+        })
+    }
+
+    const feedbacks = [
+        {
+            name: "John Doe",
+            img: "https://randomuser.me/api/portraits/men/5.jpg",
+            text: "We enjoyed working with this profile! Great experience.",
+        },
+        {
+            name: "John Doe",
+            img: "https://randomuser.me/api/portraits/men/5.jpg",
+            text: "We enjoyed working with this profile! Great experience.",
+        },
+        {
+            name: "John Doe",
+            img: "https://randomuser.me/api/portraits/men/5.jpg",
+            text: "We enjoyed working with this profile! Great experience.",
+        },
+    ]
+
+    const galleryRef = useRef(null)
+    const [canScrollLeftGallery, setCanScrollLeftGallery] = useState(false)
+    const [canScrollRightGallery, setCanScrollRightGallery] = useState(false)
+
+    const updateGalleryScrollButtons = () => {
+        if (!galleryRef.current) return
+        const { scrollLeft, scrollWidth, clientWidth } = galleryRef.current
+        setCanScrollLeftGallery(scrollLeft > 0)
+        setCanScrollRightGallery(scrollLeft + clientWidth < scrollWidth)
+    }
+
+    useEffect(() => {
+        updateGalleryScrollButtons()
+        if (galleryRef.current) {
+            galleryRef.current.addEventListener("scroll", updateGalleryScrollButtons)
+            return () => galleryRef.current.removeEventListener("scroll", updateGalleryScrollButtons)
+        }
+    }, [])
+
+    const scrollGallery = (direction) => {
+        if (!galleryRef.current) return
+        const { scrollLeft, clientWidth } = galleryRef.current
+        const scrollAmount = direction === "left" ? -clientWidth : clientWidth
+        galleryRef.current.scrollTo({
+            left: scrollLeft + scrollAmount,
+            behavior: "smooth",
+        })
+    }
+
     const [selectedImage, setSelectedImage] = useState(null);
 
     const handleImageUpload = (event) => {
@@ -182,18 +194,16 @@ export default function Profile_seen_by_worker_himself() {
             setSelectedImage(URL.createObjectURL(file));
         }
     };
+
     return (
         <Mainlayout>
-            <div className="flex justify-between items-center">
-                {/* Left: Current location */}
+            <div className='flex justify-between items-center'>
                 <div>
                     <p className='flex gap-1 ml-[40px]'>
-                        <span className='text-[#000000] font-medium text-[14px] w-[115px] h-[21px]'>Current location </span>
+                        <span className='text-[#000000] font-medium text-[14px] w-[60px] h-[21px]'>Location </span>
                         <span className='text-[#000000] font-normal text-[14px] w-[87px] h-[21px]'>Lyon, France</span>
                     </p>
                 </div>
-
-                {/* Right: Button + ToggleSwitch */}
                 <div className="flex items-center">
                     <button
                         className="w-[157px] h-[46px] flex items-center justify-center 
@@ -212,16 +222,18 @@ export default function Profile_seen_by_worker_himself() {
                 {/* Main Content Container */}
                 <div className="flex gap-10 px-4 pt-8 justify-center">
                     <div className="lg:col-span-2 space-y-5 w-full lg:w-[70%]">
-                        <div className="bg-white h-[202px] w-[982px] rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col relative">
+                        <div className="bg-white h-[202px] w-[982px] rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] px-6 py-4 flex flex-col relative">
                             <div className="flex justify-between items-center">
-                                <div className="flex gap-1 items-center">
-                                    <img src="/userloc.svg" className="w-[56px] h-[44px]" />
+                                <div className="flex flex-col items-center">
+                                    <span className='flex items-center gap-2 font-medium px-[10px] w-[154px] h-[36px] border border-[#757575] rounded-[999px]'>
+                                        <img src='/Call.svg' />
+                                        <span className="blur-[7px] bg-white/30">
+                                            0987654321
+                                        </span>
+                                    </span>
                                     <p>
-                                        <span className="font-semibold text-[#000000] text-[14px]">
-                                            Ideal workplace
-                                        </span>{" "}
-                                        <span className="font-semibold text-[#757575] text-[14px]">
-                                            Paris, France
+                                        <span className="text-[#000000] text-[14px]">
+                                            Reveal phone number
                                         </span>
                                     </p>
                                 </div>
@@ -261,7 +273,7 @@ export default function Profile_seen_by_worker_himself() {
                                     <img
                                         src="/John.svg"
                                         alt="profile"
-                                        className="w-[136px] h-[136px]"
+                                        className="w-[136px] h-[136px] rounded-ful object-cover"
                                     />
 
                                     {/* Badge */}
@@ -274,10 +286,10 @@ export default function Profile_seen_by_worker_himself() {
                             {/* Name + Roles */}
                             <div className="text-center">
                                 <h2 className="text-[24px] font-semibold text-[#000000]">John Doe</h2>
-                                <p className="text-[16px] text-[#757575]">Cook  |  Waiter  |  Barman</p>
+                                <p className="text-[16px] text-[#757575]">Gardener</p>
                             </div>
 
-                            <div className="flex items-center gap-4 mt-2 w-full max-w-[443px] h-[51px] mx-auto sm:ml-[320px]">
+                            <div className="flex items-center gap-4 mt-1 w-full max-w-[443px] h-[51px] mx-auto sm:ml-[320px]">
                                 {/* Followers */}
                                 <p className="flex flex-col items-center">
                                     <span className="text-[#29ABE2] text-[16px] font-semibold">1,252</span>
@@ -309,9 +321,9 @@ export default function Profile_seen_by_worker_himself() {
                                 <span className='text-[#29ABE2] text-[16px] font-semibold'>
                                     You can hide your review anytime !
                                 </span>
-                                <span className='text-[#29ABE2] text-[14px] font-medium'>
+                                <span className='text-[#29ABE2] text-[14px] font-medium mt-[8px]'>
                                     It will also hide every feedback you received but you won’t see other users’ reviews (companies included)
-                                    and will have to wait 30 days after reactivation to visualize them again.
+                                    and will have to wait <span className='underline'>30 days</span> after reactivation to visualize them again.
                                 </span>
                             </div>
                         </div>
@@ -332,7 +344,7 @@ export default function Profile_seen_by_worker_himself() {
                                         </div>
                                     </div>
 
-                                    <p className="text-[#29ABE2] text-[14px] font-medium cursor-pointer">Short-term</p>
+                                    <p className="text-[#757575] text-[14px] font-medium cursor-pointer">Independent</p>
                                 </div>
 
                                 {/* Skills */}
@@ -350,8 +362,8 @@ export default function Profile_seen_by_worker_himself() {
                                     </div>
 
                                     <div className="flex justify-center text-[14px] items-center gap-3 text-[#757575]">
-                                        <span className='font-medium'>Customer Service</span>
-                                        <span className='font-medium'>Customer Relationship</span>
+                                        <span className='font-medium'>Plant Care</span>
+                                        <span className='font-medium'>Garden reorganization</span>
                                         <span>
                                             <img src="/rightaero.svg" />
                                         </span>
@@ -372,9 +384,9 @@ export default function Profile_seen_by_worker_himself() {
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-center gap-3 flex-wrap">
-                                        <span className="text-[#29ABE2] text-[14px] font-medium cursor-pointer hover:underline">Fluent</span>
+                                        <span className="text-[#757575] text-[14px] font-medium cursor-pointer hover:underline">Fluent</span>
                                         <img src="/Fluent.svg" alt="French" />
-                                        <span className="text-[#29ABE2] text-[14px] font-medium cursor-pointer hover:underline">Others</span>
+                                        <span className="text-[#757575] text-[14px] font-medium cursor-pointer hover:underline">Others</span>
                                         <img src="/other1.svg" alt="English" />
                                         <img src="/other2.svg" alt="Italian" />
                                     </div>
@@ -382,57 +394,283 @@ export default function Profile_seen_by_worker_himself() {
                             </div>
                         </div>
 
-                        {/* About Me */}
+                        <div className="bg-white h-[283px] w-[982px] rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] px-6 py-4 flex flex-col items-center relative">
+                            <h3 className="font-semibold text-[#000000] mb-4 text-[20px]">My Gigs</h3>
 
-                        <div className="bg-white h-[504px] w-[982px] rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col">
-                            {/* Title + Edit Icon */}
+                            <img src="/Editgrey.svg" alt="edit" className='absolute right-5 w-[18px] h-[18px] cursor-pointer' />
+
+                            {/* Scrollable container */}
+                            <div
+                                className="flex justify-center gap-[12px] scroll-smooth w-full px-2 scrollbar-hide relative"
+                            >
+                                {mygigs.map((profile, index) => (
+                                    <div
+                                        key={index}
+                                        className="flex flex-col items-center justify-center w-[278px] h-[188px] border border-[#CECECE] rounded-[20px] bg-white shadow-[4px_4px_11px_0px_#75757530] text-center relative flex-shrink-0"
+                                    >
+                                        <div>
+                                            <h1 className='text-[28px] text-[#29ABE2] font-semibold'>{profile.mainPrice}</h1>
+                                        </div>
+                                        <div>
+                                            <p className='text-[14px] text-[#333333] font-semibold'>{profile.title}</p>
+                                        </div>
+                                        <div className='w-[235px]'>
+                                            <span className='text-[12px] text-[#333333]'>{profile.text}</span>
+                                        </div>
+                                        <button className='flex justify-center items-center mt-[5px] w-[152px] h-[38px] rounded-[10px] border border-[#000000]'>
+                                            <img src='/shop.svg' />
+                                            <span className='text-[14px] text-[#000000] font-semibold italic'>Ask to order</span>
+                                        </button>
+
+                                    </div>
+                                ))}
+
+                                <img src='/leftaero-with-border.svg' className='absolute top-20 left-0 cursor-pointer w-[32px] h-[32px]' />
+                                <img src='/rightaero-with-border.svg' className='absolute top-20 right-0 cursor-pointer w-[32px] h-[32px]' />
+                            </div>
+                        </div>
+
+                        {/* John’s Gallery */}
+
+                        <div className="bg-white w-[982px] h-[775px] rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col">
+                            <div className="relative flex items-center mb-4">
+                                <h1 className="mb-4 absolute left-1/2 transform -translate-x-1/2 font-semibold text-[#000000] text-[16px]">
+                                    About Me
+                                </h1>
+                                <div className="ml-auto">
+                                    <img src="/Editgrey.svg" alt="edit" className='w-[18px] h-[18px] cursor-pointer' />
+                                </div>
+                            </div>
+
+                            {/* Main Image */}
+
+                            <div className="flex flex-col items-center mb-4 w-full">
+                                {/* Main Upload Section */}
+                                <div className="w-[864px] h-[314px] flex flex-col items-center justify-center bg-[#E6E6E6] border-2 border-dashed border-gray-400 rounded-[20px]">
+                                    {selectedImage ? (
+                                        <img
+                                            src={selectedImage}
+                                            alt="Uploaded Preview"
+                                            className="rounded-[20px] w-full h-full object-cover"
+                                        />
+                                    ) : (
+                                        <>
+                                            <input
+                                                type="file"
+                                                id="file-upload"
+                                                accept="image/*"
+                                                onChange={handleImageUpload}
+                                                className="hidden"
+                                            />
+                                            <label
+                                                htmlFor="file-upload"
+                                                className="px-6 py-2 bg-[#29ABE2] text-[#FFFFFF] rounded-[10px] cursor-pointer transition"
+                                            >
+                                                Upload
+                                            </label>
+                                            <div className="flex items-center mt-4">
+                                                <input
+                                                    type="checkbox"
+                                                    id="repost"
+                                                    className="mr-2 text-[#000000] bg-[#E6E6E6] border-2 border-black"
+                                                />
+                                                <label
+                                                    htmlFor="repost"
+                                                    className="text-[14px] text-[#000000] font-medium cursor-pointer"
+                                                >
+                                                    Make my content eligible to be reposted on Everywhere Jobs’ Socials
+                                                    & Communications
+                                                </label>
+                                            </div>
+                                        </>
+                                    )}
+                                </div>
+
+                                {/* Thumbnails Scroll Section */}
+                                <div className="w-[864px] relative flex items-center mt-4">
+                                    {/* Thumbnails Row */}
+                                    <div
+                                        ref={galleryRef}
+                                        className="flex gap-[5px] overflow-x-auto scroll-smooth w-full scrollbar-hide px-0 z-0"
+                                    >
+                                        {Array(6)
+                                            .fill("")
+                                            .map((_, i) => (
+                                                <div
+                                                    key={i}
+                                                    className="flex flex-col gap-2 w-[257px] h-[155px] flex-shrink-0"
+                                                >
+                                                    <img
+                                                        src="/check.jpg"
+                                                        className="w-[257px] h-[155px] rounded-[20px] object-cover"
+                                                        alt="Thumbnail"
+                                                    />
+                                                </div>
+                                            ))}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='flex flex-col justify-center items-center mt-5 gap-2 w-full'>
+                                <span className="flex items-center gap-2 text-[#757575] text-[14px]">
+                                    I am a driven worker, I am looking for a short-term contract in the foods & beverages industry.
+                                </span>
+
+                                <span className='flex gap-2 text-[#757575] font-semibold text-[14px]'>
+                                    <img src="/Person.svg" alt="Person" className="w-[16px] h-[16px]" />
+                                    I consider myself as an introvert at work
+                                </span>
+                                <p className='text-[#757575] text-[14px]'>
+                                    I am authorized to work in {" "}
+                                    <span className='text-[#29ABE2] font-semibold text-[14px]'>
+                                        the European Union
+                                    </span>
+                                </p>
+                            </div>
+
+
+                            <div className='flex flex-col justify-center items-center mt-5 gap-2 w-full'>
+                                <div className="bg-[#EAF7FC] h-[66px] w-[864px] rounded-[999px] mt-5 pt-[10px] pb-[10px] pl-[80px] pr-[80px] flex justify-center items-center">
+                                    <span className='font-popins italic text-[#29ABE2] text-[14px] text-center font-medium'>
+                                        You can request content removal for reposted content here <br />
+                                        (only if you or your company are recognizable)
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {/* Recent Feedbacks */}
+
+                        <div className="bg-white h-[270px] w-[982px] rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col relative">
                             <div className="relative flex items-center mb-4">
                                 <h3 className="absolute left-1/2 transform -translate-x-1/2 font-semibold text-[#000000] text-[16px]">
-                                    About Me
+                                    Recent Feedbacks
+                                </h3>
+                                <div className="ml-auto z-20">
+                                    <img src="/Editgrey.svg" alt="edit" className='w-[18px] h-[18px] cursor-pointer ' />
+                                </div>
+                            </div>
+                            {/* Left Scroll Overlay */}
+                            {canScrollLeft && (
+                                <div className="absolute left-1 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10 flex items-center rounded-[25px] justify-start">
+                                    <button
+                                        onClick={() => scroll("left")}
+                                    >
+                                        <ChevronLeft className="w-5 h-5 text-[#757575]" />
+                                    </button>
+                                </div>
+                            )}
+
+                            {/* Right Scroll Overlay */}
+                            {canScrollRight && (
+                                <div className="absolute right-1 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10 flex items-center rounded-[25px] justify-end">
+                                    <button
+                                        onClick={() => scroll("right")}
+                                    >
+                                        <ChevronRight className="w-5 h-5 text-[#757575]" />
+                                    </button>
+                                </div>
+                            )}
+
+                            {/* Scrollable container */}
+                            <div
+                                ref={scrollRef}
+                                className="flex gap-5 overflow-x-auto scroll-smooth w-full scrollbar-hide"
+                            >
+                                {feedbacks.map((fb, index) => (
+                                    <div
+                                        key={index}
+                                        className="w-[536px] h-[173px] flex gap-2 justify-center p-5 items-center border border-[#CECECE] rounded-[20px] bg-white shadow-sm flex-shrink-0"
+                                    >
+                                        <div className='flex flex-col gap-2'>
+                                            <div className='flex justify-center items-center gap-2 h-[110px]'>
+                                                <div>
+                                                    <img
+                                                        src={fb.img}
+                                                        className="rounded-full w-[54px] h-[54px] object-cover"
+                                                        alt={fb.name}
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <div className='flex  justify-between items-center'>
+                                                        <h2 className="text-[#333333] text-[16px] font-semibold">{fb.name}</h2>
+                                                        <div className="flex items-center justify-center w-[120px] h-[24px] rounded-full  px-[2px] bg-white">
+                                                            {[...Array(5)].map((_, i) => (
+                                                                <div
+                                                                    key={i}
+                                                                    className="w-[19px] h-[19px] flex items-center justify-center"
+                                                                >
+                                                                    <img
+                                                                        src={i < 4 ? "/Star.svg" : "/StarEmpty.svg"}
+                                                                        alt="star"
+                                                                        className="w-[15px] h-[15px]"
+                                                                    />
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                    <span className="text-[#757575] text-[14px]">{fb.text}</span>
+
+                                                </div>
+                                            </div>
+                                            <hr className='text-[#DEDDDD]' />
+                                            <div className='flex p-2 mb-2 justify-center items-center gap-[106px]'>
+                                                <span className='text-[#9A9A9A] font-semibold flex gap-2 items-center'>
+                                                    <img src='/reply.svg' />
+                                                    REPLY
+                                                </span>
+                                                <span className='text-[#9A9A9A] font-semibold flex gap-2 items-center'>
+                                                    <img src='/report.svg' />
+                                                    REPORT
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                        </div>
+
+                        {/* Values & Interests */}
+
+                        <div className="bg-white h-[219px] w-[982px] rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col">
+                            <div className="relative flex items-center mb-4">
+                                <h3 className="absolute left-1/2 transform -translate-x-1/2 font-semibold text-[#000000] text-[16px]">
+                                    Values & Interests
                                 </h3>
                                 <div className="ml-auto">
                                     <img src="/Editgrey.svg" alt="edit" className='w-[18px] h-[18px] cursor-pointer' />
                                 </div>
                             </div>
 
-                            <div className="w-[918px] h-[307px] mx-auto relative custom-map-container">
-                                <CustomMap />
-
-                                <div
-                                    onClick={toggleFullscreen}
-                                    className="absolute top-[17px] right-[15px] z-[1000] rounded-[12px] flex items-center justify-center cursor-pointer transition-all duration-300 ease-in-out"
-                                >
-                                    <img src="./Stepper.svg" alt="Fullscreen" className="w-[42px] h-[42px]" />
-                                </div>
-
-                                <div
-                                    id="show-accommodations-btn"
-                                    className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[37px] w-[489px] bg-white px-[15px] py-[10px] rounded-[10px] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center gap-[10px] z-[999] whitespace-nowrap"
-                                >
-                                    <label className="font-poppins font-medium text-[12px] leading-[100%] tracking-[0]">
-                                        John might not <span className="font-medium text-[#00a0df]">live</span> at this precise location but confirms being mobile there !
-                                    </label>
-                                </div>
+                            <div className="flex flex-col gap-4 w-full">
+                                {ValuesAndInterests.map((row, rowIndex) => {
+                                    const key = Object.keys(row)[0]
+                                    return (
+                                        <div
+                                            key={rowIndex}
+                                            className="flex justify-center gap-4"
+                                        >
+                                            {row[key].map((item, index) => (
+                                                <div
+                                                    key={index}
+                                                    className="flex gap-2 items-center text-center"
+                                                >
+                                                    <img
+                                                        src={item.img}
+                                                        alt={item.name}
+                                                        className="w-[26px] h-[26px] object-contain"
+                                                    />
+                                                    <span className="text-[14px] text-[#757575]">{item.name}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )
+                                })}
                             </div>
 
-                            {/* Description */}
-                            <div className="mt-5 flex flex-col justify-center items-center text-center  gap-2">
-                                <span className="text-[#757575] text-[14px]">
-                                    I am a driven worker, I am looking for a short-term contract in the foods & beverages industry.
-                                </span>
-                                <span className="text-[#757575] font-semibold text-[14px] flex justify-center items-center gap-1">
-                                    <img src="/Person.svg" alt="Person" className="w-[16px] h-[16px]" />
-                                    I consider myself as an introvert at work
-                                </span>
-                                <p className="text-[#757575] text-[14px]">
-                                    I am authorized to work in{" "}
-                                    <span className="text-[#29ABE2] font-semibold text-[14px]">
-                                        the European Union
-                                    </span>
-                                </p>
-                            </div>
                         </div>
-
 
                         {/* Experience */}
 
@@ -570,258 +808,6 @@ export default function Profile_seen_by_worker_himself() {
                             </div>
                         </div>
 
-                        {/* Values & Interests */}
-
-                        <div className="bg-white h-[219px] w-[982px] rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col">
-                            <div className="relative flex items-center mb-4">
-                                <h3 className="absolute left-1/2 transform -translate-x-1/2 font-semibold text-[#000000] text-[16px]">
-                                    Values & Interests
-                                </h3>
-                                <div className="ml-auto">
-                                    <img src="/Editgrey.svg" alt="edit" className='w-[18px] h-[18px] cursor-pointer' />
-                                </div>
-                            </div>
-
-                            <div className="flex flex-col gap-4 w-full">
-                                {ValuesAndInterests.map((row, rowIndex) => {
-                                    const key = Object.keys(row)[0]
-                                    return (
-                                        <div
-                                            key={rowIndex}
-                                            className="flex justify-center gap-4"
-                                        >
-                                            {row[key].map((item, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="flex gap-2 items-center text-center"
-                                                >
-                                                    <img
-                                                        src={item.img}
-                                                        alt={item.name}
-                                                        className="w-[26px] h-[26px] object-contain"
-                                                    />
-                                                    <span className="text-[14px] text-[#757575]">{item.name}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )
-                                })}
-                            </div>
-
-                        </div>
-
-                        {/* Recent Feedbacks */}
-
-                        <div className="bg-white h-[270px] w-[982px] rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col relative">
-                            <div className="relative flex items-center mb-4">
-                                <h3 className="absolute left-1/2 transform -translate-x-1/2 font-semibold text-[#000000] text-[16px]">
-                                    Recent Feedbacks
-                                </h3>
-                                <div className="ml-auto z-20">
-                                    <img src="/Editgrey.svg" alt="edit" className='w-[18px] h-[18px] cursor-pointer' />
-                                </div>
-                            </div>
-                            {/* Left Scroll Overlay */}
-                            {canScrollLeft && (
-                                <div className="absolute left-1 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10 flex items-center rounded-[25px] justify-start">
-                                    <button
-                                        onClick={() => scroll("left")}
-                                    >
-                                        <ChevronLeft className="w-5 h-5 text-[#757575]" />
-                                    </button>
-                                </div>
-                            )}
-
-                            {/* Right Scroll Overlay */}
-                            {canScrollRight && (
-                                <div className="absolute right-1 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10 flex items-center rounded-[25px] justify-end">
-                                    <button
-                                        onClick={() => scroll("right")}
-                                    >
-                                        <ChevronRight className="w-5 h-5 text-[#757575]" />
-                                    </button>
-                                </div>
-                            )}
-
-                            {/* Scrollable container */}
-                            <div
-                                ref={scrollRef}
-                                className="flex gap-5 overflow-x-auto scroll-smooth w-full scrollbar-hide"
-                            >
-                                {feedbacks.map((fb, index) => (
-                                    <div
-                                        key={index}
-                                        className="w-[536px] h-[173px] flex gap-2 justify-center p-5 items-center border border-[#CECECE] rounded-[20px] bg-white shadow-sm flex-shrink-0"
-                                    >
-                                        <div className='flex flex-col gap-2'>
-                                            <div className='flex justify-center items-center gap-2 h-[110px]'>
-                                                <div>
-                                                    <img
-                                                        src={fb.img}
-                                                        className="rounded-full w-[54px] h-[54px] object-cover"
-                                                        alt={fb.name}
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <div className='flex  justify-between items-center'>
-                                                        <h2 className="text-[#333333] text-[16px] font-semibold">{fb.name}</h2>
-                                                        <div className="flex items-center justify-center w-[120px] h-[24px] rounded-full  px-[2px] bg-white">
-                                                            {[...Array(5)].map((_, i) => (
-                                                                <div
-                                                                    key={i}
-                                                                    className="w-[19px] h-[19px] flex items-center justify-center"
-                                                                >
-                                                                    <img
-                                                                        src={i < 4 ? "/Star.svg" : "/StarEmpty.svg"}
-                                                                        alt="star"
-                                                                        className="w-[15px] h-[15px]"
-                                                                    />
-                                                                </div>
-                                                            ))}
-                                                        </div>
-                                                    </div>
-                                                    <span className="text-[#757575] text-[14px]">{fb.text}</span>
-
-                                                </div>
-                                            </div>
-                                            <hr className='text-[#DEDDDD]' />
-                                            <div className='flex p-2 mb-2 justify-center items-center gap-[106px]'>
-                                                <span className='text-[#9A9A9A] font-semibold flex gap-2 items-center'>
-                                                    <img src='/reply.svg' />
-                                                    REPLY
-                                                </span>
-                                                <span className='text-[#9A9A9A] font-semibold flex gap-2 items-center'>
-                                                    <img src='/report.svg' />
-                                                    REPORT
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                        </div>
-
-                        {/* John’s Gallery */}
-
-                        <div className="bg-white w-[982px] h-[863px] rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col">
-                            <div className="relative flex items-center mb-4">
-                                <h1 className="mb-4 absolute left-1/2 transform -translate-x-1/2 font-semibold text-[#000000] text-[16px]">
-                                    John’s Gallery
-                                </h1>
-                                <div className="ml-auto">
-                                    <img src="/Editgrey.svg" alt="edit" className='w-[18px] h-[18px] cursor-pointer' />
-                                </div>
-                            </div>
-
-                            {/* Main Image */}
-
-                            <div className="flex flex-col items-center mb-4 w-full">
-                                {/* Main Upload Section */}
-                                <div className="w-[864px] h-[314px] flex flex-col items-center justify-center bg-[#E6E6E6] border-2 border-dashed border-gray-400 rounded-[20px]">
-                                    {selectedImage ? (
-                                        <img
-                                            src={selectedImage}
-                                            alt="Uploaded Preview"
-                                            className="rounded-[20px] w-full h-full object-cover"
-                                        />
-                                    ) : (
-                                        <>
-                                            <input
-                                                type="file"
-                                                id="file-upload"
-                                                accept="image/*"
-                                                onChange={handleImageUpload}
-                                                className="hidden"
-                                            />
-                                            <label
-                                                htmlFor="file-upload"
-                                                className="px-6 py-2 bg-[#29ABE2] text-[#FFFFFF] rounded-[10px] cursor-pointer transition"
-                                            >
-                                                Upload
-                                            </label>
-                                            <div className="flex items-center mt-4">
-                                                <input
-                                                    type="checkbox"
-                                                    id="repost"
-                                                    className="mr-2 text-[#000000] bg-[#E6E6E6] border-2 border-black"
-                                                />
-                                                <label
-                                                    htmlFor="repost"
-                                                    className="text-[14px] text-[#000000] font-medium cursor-pointer"
-                                                >
-                                                    Make my content eligible to be reposted on Everywhere Jobs’ Socials
-                                                    & Communications
-                                                </label>
-                                            </div>
-                                        </>
-                                    )}
-                                </div>
-
-                                {/* Thumbnails Scroll Section */}
-                                <div className="relative w-[864px] flex items-center mt-4">
-                                    {canScrollLeftGallery && (
-                                        <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white to-transparent z-20 flex items-center justify-start">
-                                            <button onClick={() => scrollGallery("left")} className="p-0">
-                                                <ChevronLeft className="w-5 h-5 text-[#757575]" />
-                                            </button>
-                                        </div>
-                                    )}
-
-                                    {/* Thumbnails Row */}
-                                    <div
-                                        ref={galleryRef}
-                                        className="flex gap-[5px] overflow-x-auto scroll-smooth w-full scrollbar-hide px-0 z-0"
-                                    >
-                                        {Array(6)
-                                            .fill("")
-                                            .map((_, i) => (
-                                                <div
-                                                    key={i}
-                                                    className="flex flex-col gap-2 w-[257px] h-[339px] flex-shrink-0"
-                                                >
-                                                    <img
-                                                        src="/check.jpg"
-                                                        className="w-[257px] h-[310px] rounded-[20px] object-cover"
-                                                        alt="Thumbnail"
-                                                    />
-                                                    <div className="flex justify-between px-2">
-                                                        <p className="flex gap-1">
-                                                            <span className="text-[#333333] font-semibold text-[14px]">
-                                                                Posted by :
-                                                            </span>
-                                                            <span className="text-[#757575] font-normal text-[14px]">
-                                                                John Doe
-                                                            </span>
-                                                        </p>
-                                                        <span className="text-[#757575] font-normal text-[14px]">
-                                                            02/09/25
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                    </div>
-
-                                    {canScrollRightGallery && (
-                                        <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white to-transparent z-20 flex items-center justify-end">
-                                            <button onClick={() => scrollGallery("right")} className="p-0">
-                                                <ChevronRight className="w-5 h-5 text-[#757575]" />
-                                            </button>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-
-
-                            <div className="bg-[#EAF7FC] h-[66px] w-[864px] rounded-[999px] mt-5 pt-[10px] pb-[10px] pl-[80px] pr-[80px] flex justify-center items-center">
-                                <span className='font-popins italic text-[#29ABE2] text-[14px] text-center font-medium'>You can request content removal for reposted content here <br />
-                                    (only if you or your company are recognizable)
-                                </span>
-                            </div>
-
-                        </div>
-
-
                         {/* Similar Profiles */}
 
                         <div className="bg-white h-[300px] w-[982px] rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col items-center relative">
@@ -915,15 +901,7 @@ export default function Profile_seen_by_worker_himself() {
                             </div>
                         </div>
 
-                        <div className="bg-[#4BDDB61A] h-[41px] w-[982px] rounded-[999px] pt-[10px] pb-[10px] pl-[80px] pr-[80px] flex justify-center items-center">
-                            <span className="text-[#4BDDB6] text-[14px] font-medium text-center">
-                                You are responsible for the information you communicate & provide on your pages : complete and verify them well !
-                            </span>
-                        </div>
-
-
                     </div>
-
                     <div className="bg-white h-auto lg:h-[691px] w-full lg:w-[345px] rounded-[25px] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col">
                         {/* Menu Section */}
                         <div className="space-y-4">
@@ -952,56 +930,9 @@ export default function Profile_seen_by_worker_himself() {
 
                         {/* Divider */}
                         <div className="border-t border-[#F5F5F5] my-6"></div>
+                        <div className='w-[285px] h-[285px]'>
+                            <CustomMap />
 
-                        {/* Relations */}
-                        <div>
-                            <h3 className="text-[#000000] font-semibold text-[16px] mb-3">Relations</h3>
-                            <div className="flex items-center gap-2">
-                                {/* Count */}
-                                <span className="text-[#29ABE2] text-[16px] font-medium cursor-pointer">
-                                    200+
-                                </span>
-                                {/* Avatars */}
-                                <div>
-                                    <img
-                                        src={'/relation.svg'}
-                                        alt="relation"
-                                        className="object-cover"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Divider */}
-                        <div className="border-t border-[#F5F5F5] my-6"></div>
-
-                        {/* Similar Profiles */}
-                        <div>
-                            <h3 className="text-[#000000] font-semibold text-[16px] mb-4">Similar Profiles</h3>
-
-                            {/* Profile 1 */}
-                            <div className="flex items-center gap-3 mb-4">
-                                <img src="/jobcard/user1.png" alt="Richard" className="w-[44px] h-[44px] rounded-full object-cover" />
-                                <div>
-                                    <p className="text-[14px] font-semibold text-[#000000] flex items-center gap-1">
-                                        Richard Branson
-                                        <img src="/badge1.svg" className="w-4 h-4" />
-                                    </p>
-                                    <p className="text-[13px] text-[#757575]">Founder at Virgin group</p>
-                                </div>
-                            </div>
-
-                            {/* Profile 2 */}
-                            <div className="flex items-center gap-3">
-                                <img src="/jobcard/user2.png" alt="Nidhi" className="w-[44px] h-[44px] rounded-full object-cover" />
-                                <div>
-                                    <p className="text-[14px] font-semibold text-[#000000] flex items-center gap-1">
-                                        Nidhi Nagori
-                                        <img src="/badge1.svg" className="w-4 h-4" />
-                                    </p>
-                                    <p className="text-[13px] text-[#757575]">CEO & Founder - Globally</p>
-                                </div>
-                            </div>
                         </div>
 
                         {/* Divider */}
@@ -1020,7 +951,6 @@ export default function Profile_seen_by_worker_himself() {
                     </div>
                 </div>
             </div>
-
         </Mainlayout >
     )
 }
