@@ -253,7 +253,7 @@ export default function jobOfferSeenByUser() {
                                     </p>
 
                                     {/* Divider */}
-                                    <div className="w-[411px] border-t border-[1px] border-gray-300 my-3"></div>
+                                    <hr className='w-[411px] text-[#DEDDDD] my-3' />
 
 
                                     {/* Job Details */}

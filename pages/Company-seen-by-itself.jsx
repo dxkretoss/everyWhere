@@ -665,7 +665,7 @@ export default function Profileseenbyvisitors() {
                             <h1 className="font-poppins font-semibold text-[16px] leading-[19.78px] tracking-normal text-black mb-4">
                                 Recent Feedbacks
                             </h1>
-                            <div className="ml-auto">
+                            <div className="ml-auto z-20">
                                 <img src="/Editgrey.svg" alt="edit" className='absolute top-5 right-5 w-[18px] h-[18px] cursor-pointer' />
                             </div>
 

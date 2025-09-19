@@ -6,7 +6,7 @@ const ToggleSwitch = ({ labelOn = "Available", labelOff = "Unavailable", title }
     const toggle = () => setIsOn(!isOn);
 
     const onText = title === "Recruiting" ? "Recruiting" : labelOn;
-    const offText = title === "Recruiting" ? "Un Recruiting" : labelOff;
+    const offText = title === "Recruiting" ? "Unrecruiting" : labelOff;
 
     return (
         <div className="

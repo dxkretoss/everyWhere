@@ -180,8 +180,8 @@ export default function MyapplicationDash() {
                                 </div>
 
                                 <div className="flex flex-col items-center mt-4">
-                                    <div className="w-[107px] h-[41px] flex justify-center items-center absolute top-16 left-1/2 -translate-x-1/2 px-4 py-1 bg-black text-white text-[16px] font-semibold rounded-full">
-                                        Waiter
+                                    <div className="w-[107px] h-[41px] flex justify-center items-center absolute top-15 left-1/2 -translate-x-1/2 px-4 py-1 bg-black text-white text-sm rounded-full">
+                                        <span className='text-[16px] font-semibold'>Waiter</span>
                                     </div>
                                     <p className="text-[14px] font-medium mt-4 text-[#757575]">30K € / Year</p>
                                 </div>
