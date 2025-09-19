@@ -1,8 +1,8 @@
 import React from 'react'
-import Chatlayout from '@/components/ChatLayout/Chatlayout';
+import Layout from '@/components/accomodationsLayout/Layout';
 import { Search } from "lucide-react";
 
-export default function Message() {
+export default function accomodationsChat() {
     const conversations = [
         {
             name: "Richard Branson",
@@ -43,7 +43,8 @@ export default function Message() {
         },
     ];
     return (
-        <Chatlayout>
+        <Layout>
+
             <div className="w-full max-w-[1440px] mx-auto">
                 <div className="flex gap-[21px] pt-[20px] pb-[20px] justify-center ">
                     <div className="lg:col-span-2">
@@ -105,7 +106,7 @@ export default function Message() {
                                                             {item.name}
                                                         </span>
                                                         {item.hasBadge && (
-                                                            <span className='w-[18px] h-[18px] bg-[#29ABE2] text-white text-[12px] rounded-full flex items-center justify-center'>
+                                                            <span className='w-[18px] h-[18px] bg-[#FFAB24] text-white text-[12px] rounded-full flex items-center justify-center'>
                                                                 1
                                                             </span>
                                                         )}
@@ -121,7 +122,7 @@ export default function Message() {
                                 </div>
                                 <div className='w-[711px] h-[531px]'>
                                     <div className='flex flex-col'>
-                                        <div className='h-[432px] bg-[linear-gradient(98.37deg,#F4FDFD_-7.82%,#DCF8F8_47.24%,#47E9C8_104.91%)]'>
+                                        <div className='h-[432px] bg-[linear-gradient(98.37deg,#FFF4E2_-7.82%,#FFDFAD_47.24%,#FFC973_106.75%)]'>
                                             <div className='flex justify-center items-center mt-[20px]'>
                                                 <div className='flex flex-col items-center'>
                                                     <span className='text-[16px] font-semibold text-[#000000]'>Jordyn Herwitz</span>
@@ -198,12 +199,12 @@ export default function Message() {
                                             </div>
                                         </div>
                                         <div className='h-[99px] p-[16px]'>
-                                            <div className='h-[68px] w-[679px] border border-[#29ABE2] rounded-[10px] flex justify-between bg-[#EAF7FC]'>
-                                                <div className='ml-[17px] mt-[14px] text-[#29ABE2] w-[408px]'>
+                                            <div className='h-[68px] w-[679px] border border-[#FFAB24] rounded-[10px] flex justify-between bg-[#FFF5E4]'>
+                                                <div className='ml-[17px] mt-[14px] text-[#FFAB24] w-[408px]'>
                                                     <input type='text' placeholder='write a message...' className='outline-none' />
                                                 </div>
                                                 <div className='flex items-center w-[109px]'>
-                                                    <img src='/doc.svg' className='w-[24px] h-[24px] mr-[5px]' />
+                                                    <img src='/doc-acc.svg' className='w-[24px] h-[24px] mr-[5px]' />
                                                     <button className='bg-[#000000] w-[74px] h-[38px] rounded-[10px] flex justify-center items-center'>
                                                         <span className='text-[14px] font-semibold text-[#FFFFFF]'>Send</span>
                                                     </button>
@@ -244,12 +245,12 @@ export default function Message() {
 
                             <h3 className="text-[#CECECE] font-semibold text-[16px] mb-2">Ad</h3>
 
-                            <div className='w-[281px] h-[281px] rounded-[20px] bg-[linear-gradient(98.37deg,#F4FDFD_-7.82%,#DCF8F8_47.24%,#47E9C8_104.91%)]'>
+                            <div className='w-[281px] h-[281px] rounded-[20px] bg-[linear-gradient(98.37deg,#FFF4E2_-7.82%,#FFDFAD_47.24%,#FFC973_106.75%)]'>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </Chatlayout >
+        </Layout>
     )
 }
