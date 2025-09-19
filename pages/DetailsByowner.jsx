@@ -7,7 +7,7 @@ const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
     ssr: false,
 });
 
-export default function Details() {
+export default function DetailsByowner() {
     const [isOn, setIsOn] = useState(true);
     const [active, setActive] = useState("Photos");
 
@@ -39,6 +39,16 @@ export default function Details() {
         { label: "E", color: "#E3E3E3" },
         { label: "F", color: "#E3E3E3" },
     ];
+
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const handleImageUpload = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            setSelectedImage(URL.createObjectURL(file));
+        }
+    };
+
     return (
         <AccMainlayout>
             <div className='min-w-[1440px] h-[55px] flex items-center shadow-[0px_4px_6px_0px_#0000001C] px-[20px]'>
@@ -63,9 +73,9 @@ export default function Details() {
                         </div>
                     </div>
                     <div className='flex justify-center items-center'>
-                        <button className='flex justify-center items-center w-[80px] h-[38px] border border-[#FFAB24] rounded-[10px]'>
-                            <img src='/savebell.svg' className='w-[14px] h-[16px] mr-[6px]' />
-                            <span className='text-[14px] text-[#FFAB24] font-semibold text-center'>SAVE</span>
+                        <button className='flex justify-center items-center w-[154px] h-[38px] border border-[#757575] rounded-[999px]'>
+                            <img src='/grey-eye.svg' className='w-[19px] h-[16px] mr-[6px]' />
+                            <span className='text-[14px] text-[#757575] font-medium text-center'>View as Visitor</span>
                         </button>
 
                         <div className='flex ml-[30px]'>
@@ -94,68 +104,135 @@ export default function Details() {
             <div className="min-h-screen">
                 <div className="flex gap-[43px] px-4 pt-8 justify-center">
                     <div className="lg:col-span-2 space-y-5 w-full lg:w-[884px] ">
-                        <div className='w-[884px] h-[425px] flex'>
-                            <div className='w-[635px] h-[425px] relative'>
-                                <img src='/details-1.svg' className='rounded-tl-[12px] rounded-bl-[12px]' />
+                        <div className='w-[884px] h-[425px] flex justify-center items-center'>
+                            <div className="flex flex-col justify-between items-center w-[635px] h-[425px] bg-[#E6E6E6] border border-dashed border-[#757575] rounded-tl-[20px] rounded-bl-[20px] p-6">
+                                {selectedImage ? (
+                                    <img
+                                        src={selectedImage}
+                                        alt="Uploaded Preview"
+                                        className="rounded-[20px] w-full h-full object-cover"
+                                    />
+                                ) : (
+                                    <>
+                                        {/* Center section: Upload + Checkbox */}
+                                        <div className="flex flex-col items-center justify-center flex-grow">
+                                            {/* Upload button */}
+                                            <input
+                                                type="file"
+                                                id="file-upload"
+                                                accept="image/*"
+                                                onChange={handleImageUpload}
+                                                className="hidden"
+                                            />
+                                            <label
+                                                htmlFor="file-upload"
+                                                className="w-[111px] h-[53px] flex justify-center items-center bg-[#29ABE2] text-[#FFFFFF] rounded-[10px] cursor-pointer transition"
+                                            >
+                                                <span className="text-[14px] font-semibold">Upload</span>
+                                            </label>
 
-                                <span className='text-[14px] font-medium text-[#000000] absolute bottom-5 right-5 bg-[#FFFFFFAB] rounded-[4px] px-[10px] py-[12px]'>1 / 4</span>
+                                            {/* Checkbox + text */}
+                                            <div className="flex items-start mt-4 max-w-[500px]">
+                                                <input
+                                                    type="checkbox"
+                                                    id="repost"
+                                                    className="w-[21px] h-[21px] accent-[#29ABE2] cursor-pointer"
+                                                />
+                                                <span className="text-[14px] text-[#000000] font-medium text-center">
+                                                    Make my content eligible to be reposted on Everywhere Homes’ Socials & Communications
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                    </>
+                                )}
+
+                                {/* Bottom disclaimer text */}
+                                <span className="text-[#757575] italic text-[12px] text-center mt-4 w-[350px]">
+                                    Request content removal <span className="underline cursor-pointer">here</span> if you changed your mind,
+                                    only if your agency or your assets are recognizable.
+                                </span>
                             </div>
+
                             <div className='flex flex-col gap-[5px] ml-[5px]'>
-                                <div className='w-[244px] h-[210px] '>
+                                <div className='w-[244px] h-[210px]  relative'>
                                     <img src='/details-2.svg' />
+                                    <span className='text-[14px] font-medium text-[#000000] absolute top-5 left-18 bg-[#FFFFFFAB] rounded-[10px] px-[10px] py-[12px]'>Cover image</span>
+                                    <span className='text-[14px] font-medium text-[#000000] absolute bottom-5 right-5 bg-[#FFFFFFAB] rounded-[4px] px-[10px] py-[12px]'>1 / 4</span>
                                 </div>
                                 <div className="w-[244px] h-[210px] relative">
                                     <img src="/details-3.svg" className="w-full h-full object-cover" />
-
-                                    <span className="absolute inset-0 flex items-center justify-center text-[16px] text-[#FFFFFF] font-semibold">
-                                        +1 Photo
-                                    </span>
+                                    <span className='text-[14px] font-medium text-[#000000] absolute bottom-5 right-5 bg-[#FFFFFFAB] rounded-[4px] px-[10px] py-[12px]'>2 / 4</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div className='w-[884px] h-[63px] flex justify-between items-center'>
-                            <div className='flex items-center'>
-                                <img src='/details-loc.svg' />
+                        <div className='flex'>
+                            <div className='w-[839px] h-[63px] flex justify-between items-center'>
+                                <div className='flex items-center'>
+                                    <img src='/details-loc.svg' />
 
-                                <div className='ml-[15px] flex flex-col'>
-                                    <span className='text-[20px] font-semibold text-[#000000]'>Two Bedroom Flat, Jean Médecin Avenue, Nice</span>
-                                    <span className='text-[14px]  text-[#757575]'>France</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div className='ml-[15px] flex flex-col items-end'>
-                                    <span className='text-[20px] font-semibold text-[#000000]'>500 € / month</span>
-                                    <div className='flex '>
-                                        <span className='text-[14px]  text-[#757575]'>(no reviews yet)</span>
-                                        {[...Array(5)].map((_, i) => (
-                                            <div
-                                                key={i}
-                                                className="w-[19px] h-[19px]"
-                                            >
-                                                <img
-                                                    src={"/StarEmpty.svg"}
-                                                    alt="star"
-                                                    className="w-[19px] h-[19px]"
-                                                />
-                                            </div>
-                                        ))}
+                                    <div className='ml-[15px] flex flex-col'>
+                                        <span className='text-[20px] font-semibold text-[#000000]'>Two Bedroom Flat, Jean Médecin Avenue, Nice</span>
+                                        <span className='text-[14px]  text-[#757575]'>France</span>
                                     </div>
                                 </div>
+                                <div>
+                                    <div className='ml-[15px] flex flex-col items-end'>
+                                        <span className='text-[20px] font-semibold text-[#000000]'>500 € / month</span>
+                                        <div className='flex '>
+                                            <span className='text-[14px]  text-[#757575]'>(no reviews yet)</span>
+                                            {[...Array(5)].map((_, i) => (
+                                                <div
+                                                    key={i}
+                                                    className="w-[19px] h-[19px]"
+                                                >
+                                                    <img
+                                                        src={"/StarEmpty.svg"}
+                                                        alt="star"
+                                                        className="w-[19px] h-[19px]"
+                                                    />
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='w-[50px] h-[63px] flex justify-end'>
+                                <img src='/Editblue.svg' className='w-[18px] h-[18px]' />
+                            </div>
+                        </div>
+
+                        <div className="bg-[#EAF7FC] border border-[#29ABE2] h-[102px] w-[884px] rounded-[10px] shadow-[0px_4px_6px_0px_#7575751A] mx-auto">
+                            <div className='text-center flex flex-col pt-[13px] pb-[13px] pl-[100px] pr-[100px] '>
+                                <span className='text-[#29ABE2] text-[16px] font-semibold'>
+                                    You can hide your review anytime !
+                                </span>
+                                <span className='text-[#29ABE2] text-[14px] font-medium'>
+                                    It will also hide every feedback you received but you won’t see other users’ reviews (companies included)
+                                    and will have to wait <span className='underline'>30 days</span> after reactivation to visualize them again.
+                                </span>
                             </div>
                         </div>
 
                         <hr className='w-[884px] text-[#DEDDDD]' />
 
                         <div className='w-[884px]'>
-                            <h2 className='text-[20px] text-[#000000] font-semibold'>Description</h2>
+                            <div className='flex justify-between items-center'>
+                                <h2 className='text-[20px] text-[#000000] font-semibold'>Description</h2>
+                                <img src="/Editgrey.svg" alt="edit" className='w-[18px] h-[18px] cursor-pointer' />
+                            </div>
+
                             <span className='text-[14px] text-[#757575] w-[875px]'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, </span>
                         </div>
 
                         <hr className='w-[884px] text-[#DEDDDD]' />
 
                         <div className='w-[884px]'>
-                            <h2 className='text-[20px] text-[#000000] font-semibold'>Characteristics</h2>
+                            <div className='flex justify-between items-center'>
+                                <h2 className='text-[20px] text-[#000000] font-semibold'>Characteristics</h2>
+                                <img src="/Editgrey.svg" alt="edit" className='w-[18px] h-[18px] cursor-pointer' />
+                            </div>
 
                             <div className='flex'>
                                 <div className="w-[75%] grid grid-cols-2 sm:grid-cols-4 gap-4 mt-[13px]">
@@ -298,9 +375,10 @@ export default function Details() {
                         <hr className='w-[884px] text-[#DEDDDD]' />
 
                         <div className='w-[884px]'>
-                            <h2 className='text-[20px] text-[#000000] font-semibold'>Additional Details</h2>
-
-
+                            <div className='flex justify-between items-center'>
+                                <h2 className='text-[20px] text-[#000000] font-semibold'>Additional Details</h2>
+                                <img src="/Editgrey.svg" alt="edit" className='w-[18px] h-[18px] cursor-pointer' />
+                            </div>
                             <div className='flex'>
 
                                 <div className="flex flex-col items-start">
@@ -315,7 +393,7 @@ export default function Details() {
                                                 onClick={() => setactiveEnergy(item.label)}
                                                 style={{ backgroundColor: item.color }}
                                                 className={`flex items-center justify-center text-[12px] font-semibold  transition-all duration-300
-                                                    ${activeEnergy === item.label
+                                                                ${activeEnergy === item.label
                                                         ? "text-black w-[28px] h-[20px] rounded-[2px]"
                                                         : "text-transparent w-[24px] h-[6px]"
                                                     }`}
@@ -339,7 +417,7 @@ export default function Details() {
                                                 onClick={() => setactiveGHG(item.label)}
                                                 style={{ backgroundColor: item.color }}
                                                 className={`flex items-center justify-center text-[12px] font-semibold  transition-all duration-300
-                                                    ${activeGHG === item.label
+                                                                ${activeGHG === item.label
                                                         ? "text-black w-[28px] h-[20px] rounded-[2px]"
                                                         : "text-transparent w-[24px] h-[6px]"
                                                     }`}
@@ -374,8 +452,10 @@ export default function Details() {
                         <hr className='w-[884px] text-[#DEDDDD]' />
 
                         <div className='w-[884px]'>
-                            <h2 className='text-[20px] text-[#000000] font-semibold'>Transports</h2>
-
+                            <div className='flex justify-between items-center'>
+                                <h2 className='text-[20px] text-[#000000] font-semibold'>Transports</h2>
+                                <img src="/Editgrey.svg" alt="edit" className='w-[18px] h-[18px] cursor-pointer' />
+                            </div>
                             <div className='flex gap-[46px]'>
                                 <div className='w-[166px] h-[67px] rounded-[10px] border border-[#29ABE2] mt-[17px] flex items-center justify-center'>
                                     <img src='/Bus.svg' />
@@ -415,53 +495,79 @@ export default function Details() {
                             <h2 className='text-[20px] text-[#000000] font-semibold'>Reviews</h2>
                             <div className='flex justify-center items-center gap-[16px]'>
                                 <ChevronLeft className='text-[#757575]' />
-                                <div className='w-[412px] h-[119px] flex justify-center rounded-[10px] border border-[#DEDDDD] mt-[17px]'>
-                                    <div className='flex justify-center items-center'>
-                                        <img src='/user.svg' className='w-[54px] h-[54px]' />
-                                        <div className='flex flex-col justify-center ml-[12px]'>
-                                            <div className='flex  justify-between items-center'>
-                                                <h2 className="text-[#333333] text-[14px] font-semibold">John Doe</h2>
-                                                <div className="flex items-center justify-center w-[120px] h-[24px] rounded-full  px-[2px] bg-white">
-                                                    {[...Array(5)].map((_, i) => (
-                                                        <div
-                                                            key={i}
-                                                            className="w-[19px] h-[19px] flex items-center justify-center"
-                                                        >
-                                                            <img
-                                                                src={i < 4 ? "/Star.svg" : "/StarEmpty.svg"}
-                                                                alt="star"
-                                                                className="w-[15px] h-[15px]"
-                                                            />
-                                                        </div>
-                                                    ))}
+                                <div className='w-[412px] h-[156px] flex justify-center rounded-[10px] border border-[#DEDDDD] mt-[17px]'>
+                                    <div className='flex flex-col gap-2 justify-center'>
+                                        <div className='flex h-[126px] justify-center items-center  mt-[33px]'>
+                                            <img src='/user.svg' className='w-[54px] h-[54px]' />
+                                            <div className='flex flex-col justify-center ml-[12px]'>
+                                                <div className='flex  justify-between items-center'>
+                                                    <h2 className="text-[#333333] text-[14px] font-semibold">John Doe</h2>
+                                                    <div className="flex items-center justify-center w-[120px] h-[24px] rounded-full  px-[2px] bg-white">
+                                                        {[...Array(5)].map((_, i) => (
+                                                            <div
+                                                                key={i}
+                                                                className="w-[19px] h-[19px] flex items-center justify-center"
+                                                            >
+                                                                <img
+                                                                    src={i < 4 ? "/Star.svg" : "/StarEmpty.svg"}
+                                                                    alt="star"
+                                                                    className="w-[15px] h-[15px]"
+                                                                />
+                                                            </div>
+                                                        ))}
+                                                    </div>
                                                 </div>
+                                                <span className="text-[#757575] text-[14px]">"I recommend this accomodation a lot !"</span>
                                             </div>
-                                            <span className="text-[#757575] text-[14px]">"I recommend this accomodation a lot !"</span>
+                                        </div>
+                                        <hr className='text-[#DEDDDD] mt-[19px]' />
+                                        <div className='flex p-2 mb-2 justify-center items-center gap-[106px]'>
+                                            <span className='text-[#9A9A9A] font-semibold flex gap-2 items-center'>
+                                                <img src='/reply.svg' />
+                                                REPLY
+                                            </span>
+                                            <span className='text-[#9A9A9A] font-semibold flex gap-2 items-center'>
+                                                <img src='/report.svg' />
+                                                REPORT
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
-                                <div className='w-[412px] h-[119px]  flex justify-center rounded-[10px] border border-[#DEDDDD] mt-[17px]'>
-                                    <div className='flex justify-center items-center'>
-                                        <img src='/user.svg' className='w-[54px] h-[54px]' />
-                                        <div className='flex flex-col justify-center ml-[12px]'>
-                                            <div className='flex  justify-between items-center'>
-                                                <h2 className="text-[#333333] text-[14px] font-semibold">John Doe</h2>
-                                                <div className="flex items-center justify-center w-[120px] h-[24px] rounded-full  px-[2px] bg-white">
-                                                    {[...Array(5)].map((_, i) => (
-                                                        <div
-                                                            key={i}
-                                                            className="w-[19px] h-[19px] flex items-center justify-center"
-                                                        >
-                                                            <img
-                                                                src={i < 4 ? "/Star.svg" : "/StarEmpty.svg"}
-                                                                alt="star"
-                                                                className="w-[15px] h-[15px]"
-                                                            />
-                                                        </div>
-                                                    ))}
+                                <div className='w-[412px] h-[156px] flex justify-center rounded-[10px] border border-[#DEDDDD] mt-[17px]'>
+                                    <div className='flex flex-col gap-2 justify-center'>
+                                        <div className='flex h-[126px] justify-center items-center  mt-[33px]'>
+                                            <img src='/user.svg' className='w-[54px] h-[54px]' />
+                                            <div className='flex flex-col justify-center ml-[12px]'>
+                                                <div className='flex  justify-between items-center'>
+                                                    <h2 className="text-[#333333] text-[14px] font-semibold">John Doe</h2>
+                                                    <div className="flex items-center justify-center w-[120px] h-[24px] rounded-full  px-[2px] bg-white">
+                                                        {[...Array(5)].map((_, i) => (
+                                                            <div
+                                                                key={i}
+                                                                className="w-[19px] h-[19px] flex items-center justify-center"
+                                                            >
+                                                                <img
+                                                                    src={i < 4 ? "/Star.svg" : "/StarEmpty.svg"}
+                                                                    alt="star"
+                                                                    className="w-[15px] h-[15px]"
+                                                                />
+                                                            </div>
+                                                        ))}
+                                                    </div>
                                                 </div>
+                                                <span className="text-[#757575] text-[14px]">"I recommend this accomodation a lot !"</span>
                                             </div>
-                                            <span className="text-[#757575] text-[14px]">"I recommend this accomodation a lot !"</span>
+                                        </div>
+                                        <hr className='text-[#DEDDDD] mt-[19px]' />
+                                        <div className='flex p-2 mb-2 justify-center items-center gap-[106px]'>
+                                            <span className='text-[#9A9A9A] font-semibold flex gap-2 items-center'>
+                                                <img src='/reply.svg' />
+                                                REPLY
+                                            </span>
+                                            <span className='text-[#9A9A9A] font-semibold flex gap-2 items-center'>
+                                                <img src='/report.svg' />
+                                                REPORT
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -551,12 +657,20 @@ export default function Details() {
                             </div>
                         </div>
 
-                        <hr className='w-[884px] text-[#DEDDDD]' />
+                        <div className="bg-[#4BDDB61A] h-[41px] w-[885px] rounded-[999px] pt-[10px] pb-[10px] pl-[30px] pr-[30px] flex justify-center items-center mb-10">
+                            <span className="text-[#4BDDB6] text-[14px] font-medium text-center">
+                                You are responsible for the information you communicate & provide on your pages : complete and verify them well !
+                            </span>
+                        </div>
 
                     </div>
                     <div className='flex flex-col items-center '>
-                        <div className="w-[413px] h-[425px] rounded-[10px] border border-[#DEDDDD] bg-[#FDFDFD] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col items-center">
+                        <div className="w-[413px] h-[425px] rounded-[10px] border border-[#DEDDDD] bg-[#FDFDFD] shadow-[0px_4px_6px_0px_#7575751A] p-6 flex flex-col items-center relative">
                             <h2 className='text-[#000000] text-[20px] font-semibold'>Contact the advertiser</h2>
+
+                            <div className="ml-auto">
+                                <img src="/Editgrey.svg" alt="edit" className='w-[18px] h-[18px] absolute top-7 right-5 cursor-pointer' />
+                            </div>
 
                             <textarea
                                 defaultValue={'I am interested in this offer and would like to know more about it'}
@@ -612,7 +726,6 @@ export default function Details() {
 
                 </div>
             </div>
-
-        </AccMainlayout >
+        </AccMainlayout>
     )
 }
