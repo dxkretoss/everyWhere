@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Accomodationslayout from '@/components/Layout/accomodationslayout'
+import AccMainlayout from '@/components/AccMainlayout/AccMainlayout';
 import dynamic from "next/dynamic"
 
 const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
@@ -17,7 +17,7 @@ export default function FavProperties() {
 
     const cards = [1, 2, 3];
     return (
-        <Accomodationslayout>
+        <AccMainlayout>
             <div className='h-[55px] flex items-center justify-center shadow-[0px_4px_6px_0px_#0000001C]'>
                 <h1 className='text-[24px] font-semibold text-[#000000]'>Favourite Properties</h1>
             </div>
@@ -153,6 +153,6 @@ export default function FavProperties() {
                     <img src='/rightaero-with-border.svg' className='absolute top-1/2 -right-10 cursor-pointer' />
                 </div>
             </div>
-        </Accomodationslayout>
+        </AccMainlayout>
     )
 }

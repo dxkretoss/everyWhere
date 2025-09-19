@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import Accomodationslayout from '@/components/Layout/accomodationslayout'
 import dynamic from "next/dynamic"
-
+import AccMainlayout from '@/components/AccMainlayout/AccMainlayout';
 const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
     ssr: false,
 });
@@ -9,11 +8,6 @@ const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
 export default function Manageproperties() {
     const [isOn, setIsOn] = useState(true);
     const [selectedCard, setSelectedCard] = useState(true);
-    const [skillLevel, setSkillLevel] = useState(30);
-
-    const handleSkillLevelChange = (event) => {
-        setSkillLevel(parseInt(event.target.value));
-    };
 
     const [active, setActive] = useState("New");
 
@@ -23,7 +17,7 @@ export default function Manageproperties() {
         { label: "Ignored", minWidth: "124px" },
     ];
     return (
-        <Accomodationslayout>
+        <AccMainlayout>
             <div className='h-[57px] flex items-center justify-center shadow-[0px_4px_6px_0px_#0000001C]'>
                 <h1 className='text-[24px] font-semibold text-[#000000]'>Managed Properties</h1>
             </div>
@@ -547,6 +541,6 @@ export default function Manageproperties() {
                     </div>
                 ) : null}
             </div>
-        </Accomodationslayout >
+        </AccMainlayout >
     )
 }

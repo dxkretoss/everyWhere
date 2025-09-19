@@ -1,8 +1,7 @@
 import React from 'react'
 import Navbaraccomodations from '../Navbar/Navbaraccomodations'
 import Footeraccomodations from '../Footer/Footeraccomodations'
-
-export default function Accomodationslayout({ children }) {
+export default function AccMainlayout({ children }) {
     return (
         <div className="flex flex-col min-h-screen bg-white">
             <header className="w-full">

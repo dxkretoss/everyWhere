@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '@/components/accomodationsLayout/Layout';
+import Layout from '@/components/AccomodationsLayout/Layout';
 import { Search } from "lucide-react";
 
 export default function accomodationsChat() {
