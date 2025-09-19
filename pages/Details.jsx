@@ -16,6 +16,29 @@ export default function Details() {
         { label: "Description & Characteristics", minWidth: "270px" },
         { label: "Map", minWidth: "69px" },
     ];
+
+    const [activeEnergy, setactiveEnergy] = useState("A");
+
+    const levels = [
+        { label: "A", color: "#25A96D" },
+        { label: "B", color: "#538D2B" },
+        { label: "C", color: "#C8CC2A" },
+        { label: "D", color: "#F7E003" },
+        { label: "E", color: "#EAA511" },
+        { label: "F", color: "#EC8200" },
+        { label: "G", color: "#D24D0A" },
+    ];
+
+    const [activeGHG, setactiveGHG] = useState("A");
+
+    const levelsGHG = [
+        { label: "A", color: "#999999" },
+        { label: "B", color: "#BABABA" },
+        { label: "C", color: "#C8C8C8" },
+        { label: "D", color: "#D8D8D8" },
+        { label: "E", color: "#E3E3E3" },
+        { label: "F", color: "#E3E3E3" },
+    ];
     return (
         <AccMainlayout>
             <div className='min-w-[1440px] h-[55px] flex items-center shadow-[0px_4px_6px_0px_#0000001C] px-[20px]'>
@@ -276,6 +299,76 @@ export default function Details() {
 
                         <div className='w-[884px]'>
                             <h2 className='text-[20px] text-[#000000] font-semibold'>Additional Details</h2>
+
+
+                            <div className='flex'>
+
+                                <div className="flex flex-col items-start">
+                                    {/* Title */}
+                                    <p className="text-[16px] text-[#000000] font-medium mb-2">Energy performance</p>
+
+                                    {/* Scale */}
+                                    <div className="flex gap-[2px] items-center">
+                                        {levels.map((item) => (
+                                            <button
+                                                key={item.label}
+                                                onClick={() => setactiveEnergy(item.label)}
+                                                style={{ backgroundColor: item.color }}
+                                                className={`flex items-center justify-center text-[12px] font-semibold  transition-all duration-300
+                                                    ${activeEnergy === item.label
+                                                        ? "text-black w-[28px] h-[20px] rounded-[2px]"
+                                                        : "text-transparent w-[24px] h-[6px]"
+                                                    }`}
+                                            >
+                                                {item.label}
+                                            </button>
+                                        ))}
+                                    </div>
+
+                                </div>
+
+                                <div className="flex flex-col items-start ml-[32px]">
+                                    {/* Title */}
+                                    <p className="text-[16px] text-[#000000] font-medium mb-2">GHG emission</p>
+
+                                    {/* Scale */}
+                                    <div className="flex gap-[2px] items-center">
+                                        {levelsGHG.map((item) => (
+                                            <button
+                                                key={item.label}
+                                                onClick={() => setactiveGHG(item.label)}
+                                                style={{ backgroundColor: item.color }}
+                                                className={`flex items-center justify-center text-[12px] font-semibold  transition-all duration-300
+                                                    ${activeGHG === item.label
+                                                        ? "text-black w-[28px] h-[20px] rounded-[2px]"
+                                                        : "text-transparent w-[24px] h-[6px]"
+                                                    }`}
+                                            >
+                                                {item.label}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-col items-start ml-[32px]">
+                                    {/* Title */}
+                                    <p className="text-[16px] text-[#000000] font-medium mb-2">Contract</p>
+                                    <span className='text-[#757575] text-[14px]'>Rental</span>
+                                </div>
+
+                                <div className="flex flex-col items-start  ml-[102px]">
+                                    {/* Title */}
+                                    <p className="text-[16px] text-[#000000] font-medium mb-2">Duration</p>
+                                    <span className='text-[#757575] text-[14px]'>Long stay</span>
+                                </div>
+
+                                <div className="flex flex-col items-start  ml-[102px]">
+                                    {/* Title */}
+                                    <p className="text-[16px] text-[#000000] font-medium mb-2">Furnished</p>
+                                    <span className='text-[#757575] text-[14px]'>Yes</span>
+                                </div>
+
+                            </div>
                         </div>
 
                         <hr className='w-[884px] text-[#DEDDDD]' />
