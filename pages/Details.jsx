@@ -573,7 +573,7 @@ export default function Details() {
                             <div className='border border-[#DEDDDD] flex items-center p-[16px] rounded-[10px] bg-[#FFFFFF] w-[372px] h-[68px] mt-[20px]'>
                                 <div className='flex justify-between w-full'>
                                     <div className='flex items-center'>
-                                        <img src='call.svg' className='w-[24px] h-[24px]' />
+                                        <img src='/Call.svg' className='w-[24px] h-[24px]' />
                                         <div className='flex flex-col ml-[12px]'>
                                             <span className='text-[#000000] text-[14px] font-semibold'>Private</span>
                                             <span className='text-[#757575] text-[14px]'>43543645767</span>
