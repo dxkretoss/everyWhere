@@ -1,0 +1,21 @@
+import React from "react";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
+
+export default function Chatlayout({ children }) {
+    return (
+        <div className="flex flex-col min-h-screen bg-[#EEEEEE]">
+            <header className="w-full">
+                <Navbar />
+            </header>
+
+            <main className="flex-1">
+                {children}
+            </main>
+
+            <footer className="w-full">
+                <Footer />
+            </footer>
+        </div>
+    );
+}
