@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '@/components/AccomodationsLayout/Layout';
+import Layout from '@/components/AccLayout/Layout';
 import { Search } from "lucide-react";
 
 export default function accomodationsChat() {
@@ -44,7 +44,6 @@ export default function accomodationsChat() {
     ];
     return (
         <Layout>
-
             <div className="w-full max-w-[1440px] mx-auto">
                 <div className="flex gap-[21px] pt-[20px] pb-[20px] justify-center ">
                     <div className="lg:col-span-2">
