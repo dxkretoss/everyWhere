@@ -130,7 +130,7 @@ export default function Manageproperties() {
                                         </p>
                                         <p className='flex gap-1'>
                                             <span className="text-[#FFAB24] text-[16px] font-semibold">12</span>
-                                            <span className="text-[#757575] text-[14px">applicants</span>
+                                            <span className="text-[#757575] text-[14px">messages</span>
                                         </p>
                                     </div>
                                 </div>
@@ -231,7 +231,7 @@ export default function Manageproperties() {
                                         </p>
                                         <p className='flex gap-1'>
                                             <span className="text-[#FFAB24] text-[16px] font-semibold">12</span>
-                                            <span className="text-[#757575] text-[14px">applicants</span>
+                                            <span className="text-[#757575] text-[14px">messages</span>
                                         </p>
                                     </div>
                                 </div>
@@ -330,7 +330,7 @@ export default function Manageproperties() {
                                         </p>
                                         <p className='flex gap-1'>
                                             <span className="text-[#FFAB24] text-[16px] font-semibold">12</span>
-                                            <span className="text-[#757575] text-[14px">applicants</span>
+                                            <span className="text-[#757575] text-[14px">messages</span>
                                         </p>
                                     </div>
                                 </div>
@@ -353,7 +353,8 @@ export default function Manageproperties() {
                                         Get a premium account
                                     </span>
                                     <span className="text-[14px] font-medium text-[#333333]">
-                                        & post an endless number of housing ads !                                    </span>
+                                        & post an endless number of housing ads !
+                                    </span>
                                 </div>
                             </div>
                         </div>
