@@ -49,6 +49,11 @@ const ValuesAndInterests = [
     },
 ]
 export default function Profile_seen_by_worker_himself() {
+
+    useEffect(() => {
+        document.title = 'Profile(seen by worker himself)'
+    }, [])
+
     const scrollRef = useRef(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false)
     const [canScrollRight, setCanScrollRight] = useState(false)

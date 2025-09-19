@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Chatlayout from '@/components/ChatLayout/Chatlayout';
 import { Search } from "lucide-react";
 
 export default function Message() {
+    useEffect(() => {
+        document.title = 'Job Chat'
+    }, [])
     const conversations = [
         {
             name: "Richard Branson",

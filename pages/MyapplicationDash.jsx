@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from '@/components/Layout/Layout'
 import dynamic from "next/dynamic"
 
@@ -7,6 +7,10 @@ const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
 });
 
 export default function MyapplicationDash() {
+
+    useEffect(() => {
+        document.title = 'My Applications Dashboard'
+    }, [])
     const [active, setActive] = useState("Replied");
 
     const buttons = [

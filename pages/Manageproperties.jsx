@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import dynamic from "next/dynamic"
 import AccMainlayout from '@/components/AccMainlayout/AccMainlayout';
 const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
@@ -6,6 +6,9 @@ const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
 });
 
 export default function Manageproperties() {
+    useEffect(() => {
+        document.title = 'Managed Properties Dashboard'
+    }, [])
     const [isOn, setIsOn] = useState(true);
     const [selectedCard, setSelectedCard] = useState(true);
 

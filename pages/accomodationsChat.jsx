@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '@/components/AccLayout/Layout';
 import { Search } from "lucide-react";
 
 export default function accomodationsChat() {
+
+    useEffect(() => {
+        document.title = "Accomodations Chat"
+    }, []);
+
     const conversations = [
         {
             name: "Richard Branson",

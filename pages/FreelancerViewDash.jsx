@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from '@/components/Layout/Layout'
 import dynamic from "next/dynamic"
 
@@ -7,6 +7,10 @@ const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
 });
 
 export default function FreelancerViewDash() {
+    useEffect(() => {
+        document.title = 'Freelancer view dashboard'
+    }, [])
+
     const [isOn, setIsOn] = useState(true);
     const [selectedCard, setSelectedCard] = useState(1);
     const [cardID, setcardID] = useState(1);

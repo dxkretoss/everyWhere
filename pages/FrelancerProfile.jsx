@@ -41,6 +41,10 @@ const ValuesAndInterests = [
 
 export default function FrelancerProfile() {
 
+    useEffect(() => {
+        document.title = 'Freelancer profile (seen by visitors)'
+    }, [])
+
     const mygigs = [
         {
             mainPrice: "60€",

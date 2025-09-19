@@ -13,6 +13,10 @@ const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
 });
 
 export default function accomodationsPage() {
+    useEffect(() => {
+        document.title = "Accomodations"
+    }, []);
+
     const router = useRouter();
     const currentPath = router.pathname;
     const scrollRef = useRef(null)

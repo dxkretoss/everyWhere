@@ -10,6 +10,11 @@ const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
 });
 
 export default function jobOfferSeenByUser() {
+
+    useEffect(() => {
+        document.title = "Job offer (seen by company itself)"
+    }, []);
+
     const [skillLevel, setSkillLevel] = useState(30);
     const [attachCV, setAttachCV] = useState(false);
     const [needVisa, setNeedVisa] = useState(false);

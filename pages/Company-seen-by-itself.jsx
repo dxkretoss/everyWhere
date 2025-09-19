@@ -39,7 +39,9 @@ const ValuesAndInterests = [
     },
 ]
 export default function Profileseenbyvisitors() {
-
+    useEffect(() => {
+        document.title = "Company (seen by company itself)"
+    }, []);
 
     const [selectedImage, setSelectedImage] = useState(null);
 

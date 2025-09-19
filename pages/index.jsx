@@ -13,6 +13,9 @@ const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
 });
 
 export default function Index() {
+  useEffect(() => {
+    document.title = 'Job Offer'
+  }, [])
   const router = useRouter();
   const currentPath = router.pathname;
   const scrollRef = useRef(null)

@@ -51,6 +51,10 @@ const ValuesAndInterests = [
 ]
 export default function Profileseenbyvisitors() {
 
+    useEffect(() => {
+        document.title = 'Profile(seen by visitors)'
+    }, [])
+
     const scrollRef = useRef(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false)
     const [canScrollRight, setCanScrollRight] = useState(false)

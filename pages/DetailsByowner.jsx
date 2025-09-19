@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import AccMainlayout from '@/components/AccMainlayout/AccMainlayout'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import dynamic from "next/dynamic"
@@ -8,6 +8,9 @@ const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
 });
 
 export default function DetailsByowner() {
+    useEffect(() => {
+        document.title = 'Detail (seen by property owner)'
+    }, [])
     const [isOn, setIsOn] = useState(true);
     const [active, setActive] = useState("Photos");
 

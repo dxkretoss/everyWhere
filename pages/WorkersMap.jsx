@@ -12,6 +12,11 @@ const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
 });
 
 export default function WorkersMap() {
+
+    useEffect(() => {
+        document.title = 'Workers Map Page'
+    }, [])
+
     const router = useRouter();
     const currentPath = router.pathname;
     const scrollRef = useRef(null)

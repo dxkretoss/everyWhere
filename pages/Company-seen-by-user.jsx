@@ -40,6 +40,10 @@ const ValuesAndInterests = [
 ]
 export default function Profileseenbyvisitors() {
 
+    useEffect(() => {
+        document.title = "Company (seen by other users)"
+    }, []);
+
     const scrollRef = useRef(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false)
     const [canScrollRight, setCanScrollRight] = useState(false)

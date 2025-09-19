@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import AccMainlayout from '@/components/AccMainlayout/AccMainlayout';
 import dynamic from "next/dynamic"
 
@@ -7,6 +7,9 @@ const CustomMap = dynamic(() => import("@/components/CustomMap/CustomMap"), {
 });
 
 export default function FavProperties() {
+    useEffect(() => {
+        document.title = 'Favourite Properties Dashboard (viewed by viewer)'
+    }, [])
     const [active, setActive] = useState("Replied");
 
     const buttons = [
