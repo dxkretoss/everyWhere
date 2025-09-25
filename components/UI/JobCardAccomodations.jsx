@@ -53,7 +53,7 @@ export default function JobCardAccomodations() {
 
                         {/* Item 2 */}
                         <span className="flex items-center gap-1 text-black">
-                            <img src="/jobcard/5-locals.png" alt="locals" className="w-5 h-5" />
+                            <img src="/jobcard/5-locals.svg" alt="locals" className="w-5 h-5" />
                             5 locals
                         </span>
 

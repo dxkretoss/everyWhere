@@ -66,7 +66,7 @@ export default function accomodationsPage() {
         { leftImg: "/accomodationsPage/accomodation_Place.svg", text: "Type", minWidth: "115px" },
         { leftImg: "/accomodationsPage/dollar.svg", text: "Price", minWidth: "115px" },
         { leftImg: "/accomodationsPage/Duration.svg", text: "Duration", minWidth: "134px" },
-        { leftImg: "/accomodationsPage/Locals.png", text: "Locals", minWidth: "125px" }, // later change
+        { leftImg: "/accomodationsPage/Locals.svg", text: "Locals", minWidth: "125px" }, // later change
         { leftImg: "/accomodationsPage/Area.svg", text: "Area", minWidth: "111px" },
         { leftImg: "/accomodationsPage/Bedrooms.svg", text: "Bedrooms", minWidth: "152px" },
         { leftImg: "/accomodationsPage/Furnished.svg", text: "Furnished", minWidth: "151px" },

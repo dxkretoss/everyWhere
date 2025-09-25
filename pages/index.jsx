@@ -57,7 +57,7 @@ export default function Index() {
     { leftImg: "/exp.svg", text: "Experience", minWidth: "150px" },
     { leftImg: "/language.svg", text: "Languages", minWidth: "161px" },
     { leftImg: "/rating.svg", text: "Rating level", minWidth: "159px" },
-    { leftImg: "/workstyle.png", text: "Work style", minWidth: "148px" },
+    { leftImg: "/workstyle.svg", text: "Work style", minWidth: "148px" },
   ]
 
   const toggleFullscreen = () => {

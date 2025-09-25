@@ -7,7 +7,7 @@ export default function Navbaraccomodations() {
             <div className="flex items-center flex-1">
                 <div className="w-[230px]">
                     <Image
-                        src="/nav/AccLogo.png"
+                        src="/nav/AccLogo.svg"
                         alt="Logo"
                         width={215}
                         height={57}

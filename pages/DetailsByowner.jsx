@@ -255,7 +255,7 @@ export default function DetailsByowner() {
                                     {/* Item 2 */}
 
                                     <div className='flex items-center'>
-                                        <img src="/jobcard/5-locals.png" alt="locals" className="w-[21px] h-[21px]" />
+                                        <img src="/jobcard/5-locals.svg" alt="locals" className="w-[21px] h-[21px]" />
                                         <div className='ml-[10px]'>
                                             <span className="flex text-[16px] font-medium text-black">
                                                 Locals
