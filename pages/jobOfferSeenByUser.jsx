@@ -361,14 +361,14 @@ export default function jobOfferSeenByUser() {
                                         <div className='flex flex-col gap-6 items-center'>
                                             <div className='flex gap-4 items-center '>
                                                 <img
-                                                    src="/other1.svg"
+                                                    src="/other2.svg"
                                                     alt="UK flag"
-                                                    className="w-[44px] h-[32px] rounded-sm object-cover"
+                                                    className="w-[44px] h-[32px]  object-cover"
                                                 />
                                                 <img
-                                                    src="/other2.svg"
+                                                    src="/other1.svg"
                                                     alt="Italian flag"
-                                                    className="w-[44px] h-[32px] rounded-sm object-cover"
+                                                    className="w-[44px] h-[32px]  object-cover"
                                                 />
                                             </div>
                                             <span className="

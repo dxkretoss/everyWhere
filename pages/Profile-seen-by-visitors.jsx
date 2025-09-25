@@ -319,8 +319,8 @@ export default function Profileseenbyvisitors() {
                                         <span className="text-[#29ABE2] text-[14px] font-medium cursor-pointer hover:underline">Fluent</span>
                                         <img src="/Fluent.svg" alt="French" />
                                         <span className="text-[#29ABE2] text-[14px] font-medium cursor-pointer hover:underline">Others</span>
-                                        <img src="/other1.svg" alt="English" />
-                                        <img src="/other2.svg" alt="Italian" />
+                                        <img src="/other2.svg" alt="English" />
+                                        <img src="/other1.svg" alt="Italian" />
                                     </div>
                                 </div>
                             </div>
