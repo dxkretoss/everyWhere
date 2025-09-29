@@ -98,15 +98,15 @@ export default function FavProperties() {
                                 <div className="flex justify-around gap-4 mt-2 text-[12px]">
                                     <div className="flex items-center gap-1">
                                         <img src='/Apartment.svg' />
-                                        <span className='text-[12px] text-[#757575]'>Apartment</span>
+                                        <span className='text-[12px] text-[#757575] font-medium'>Apartment</span>
                                     </div>
                                     <div className="flex items-center gap-1">
                                         <img src='/1.svg' />
-                                        <span className='text-[12px] text-[#757575]'>1</span>
+                                        <span className='text-[12px] text-[#757575] font-medium'>1</span>
                                     </div>
                                     <div className="flex items-center gap-1">
                                         <img src='/100m2.svg' />
-                                        <span className='text-[12px] text-[#757575]'>100 m<sub>2</sub></span>
+                                        <span className='text-[12px] text-[#757575] font-medium'>100 m<sub>2</sub></span>
                                     </div>
                                 </div>
 
